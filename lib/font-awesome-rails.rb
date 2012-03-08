@@ -3,7 +3,8 @@ require "font-awesome-rails/version"
 module Font
   module Awesome
     module Rails
-      # Your code goes here...
+      class Engine < ::Rails::Engine
+      end
     end
   end
 end
