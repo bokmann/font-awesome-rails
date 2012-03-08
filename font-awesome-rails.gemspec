@@ -14,4 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "font-awesome-rails"
   gem.require_paths = ["lib"]
   gem.version       = Font::Awesome::Rails::VERSION
+  
+  gem.add_dependency "railties", "~> 3.1"
+  gem.add_development_dependency "rake"
 end
