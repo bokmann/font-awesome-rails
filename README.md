@@ -8,16 +8,15 @@ In a format suitable for use with the Rails asset pipeline.
 
 add this to your gemfile:
 
-gem 'font-awesome-rails'
-
+    gem 'font-awesome-rails'
 
 and type
 
-bundle install
+    bundle install
 
 and now in your application.css you can include the css file like so:
 
-*= require 'font-awesome'
+    *= require 'font-awesome'
 
 
 
@@ -26,6 +25,6 @@ I'm not a fan of randomly grabbing files and adding them to my project - later o
 note on version 0.2.0 - FontAwesome now includes scss and sass files, but when I used them instead of the plain ol css file included in the project, it wanted some compass libraries.  I'm a fan of compass, but including an entire tool like that in order to generate a @font_face tag seems a little much... I don't want this gem to require compass for such a trivial thing, so we are staying on the vanilla css file for now.
 
 
-  version    FontAwesome's sha1 hash       Other additions
-  0.1.0      378b2d7                       Simplest packaging as a gem as possible
-  0.2.0      563a6f3                       Repackaged after their new release
+    version    FontAwesome's sha1 hash       Other additions
+    0.1.0      378b2d7                       Simplest packaging as a gem as possible
+    0.2.0      563a6f3                       Repackaged after their new release
