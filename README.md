@@ -28,3 +28,11 @@ note on version 0.2.0 - FontAwesome now includes scss and sass files, but when I
     version    FontAwesome's sha1 hash       Other additions
     0.1.0      378b2d7                       Simplest packaging as a gem as possible
     0.2.0      563a6f3                       Repackaged after their new release
+    0.2.1      563a6f3                       Forgot I had patched the css to reflect the font assetified location.
+    
+    
+    
+todo:
+
+ - Needs s simple mechanism to test that the assets provided are available on the path expected.
+ - I think the css should be an scss so we can compile to the expected asset path
