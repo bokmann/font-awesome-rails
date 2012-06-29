@@ -38,10 +38,12 @@
   display: inline-block;
   text-decoration: inherit;
 }
+[class^="icon-"], [class*=" icon-"] {
+  background: none;
+}
 a [class^="icon-"], a [class*=" icon-"] {
   display: inline-block;
   text-decoration: inherit;
-  background: none;
 }
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
