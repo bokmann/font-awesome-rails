@@ -29,6 +29,8 @@ note on version 0.2.0 - FontAwesome now includes scss and sass files, but when I
     0.1.0      378b2d7                       Simplest packaging as a gem as possible
     0.2.0      563a6f3                       Repackaged after their new release
     0.2.1      563a6f3                       Forgot I had patched the css to reflect the font assetified location.
+    0.3.0      um, unknown.  Aditya Sanghi pulled it in and I wasn't watching.  Will make sure
+               that doesn't happen again.
     
     
     
