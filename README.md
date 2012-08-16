@@ -31,7 +31,7 @@ note on version 0.2.0 - FontAwesome now includes scss and sass files, but when I
     0.2.1      563a6f3                       Forgot I had patched the css to reflect the font assetified location.
     0.3.0      um, unknown.  Aditya Sanghi pulled it in and I wasn't watching.  Will make sure
                that doesn't happen again.
-    
+    0.4.0      05e5e5b                       Pullup request to 2.0 release of font-awesome
     
     
 todo:
