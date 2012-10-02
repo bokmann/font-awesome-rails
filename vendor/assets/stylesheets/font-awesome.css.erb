@@ -41,7 +41,8 @@
   display: inline-block;
   text-decoration: inherit;
 }
-[class^="icon-"], [class*=" icon-"] {
+/* hide default bootstrap backgrounds so that they don't overlap with font awesome */
+[class^="icon-"], [class*=" icon-"], .icon-white, .nav > .active > a > [class^="icon-"], .nav > .active > a > [class=" icon-"], .dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class=" icon-"], .dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
   background: none;
 }
 a [class^="icon-"], a [class*=" icon-"] {
