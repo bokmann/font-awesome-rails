@@ -4,3 +4,4 @@ Gemfile.lock
 pkg/*
 bin
 vendor/ruby
+.rbenv-version
