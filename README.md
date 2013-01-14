@@ -33,6 +33,7 @@ note on version 0.2.0 - FontAwesome now includes scss and sass files, but when I
                that doesn't happen again.
     0.4.0      05e5e5b                       Pullup request to 2.0 release of font-awesome
     0.5.0      contrib from christhekeele    Attempt to prepare request to 3.0 release of font-awesome
+    3.0.1.0    7d173f2                       3.0.1 release
 
 
 todo:
