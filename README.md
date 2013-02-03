@@ -16,7 +16,9 @@ and run `bundle install`.
 
 In your `application.css`, include the css file:
 
-    *= require font-awesome
+    /*
+     *= require font-awesome
+     */
 
 If you prefer [SCSS](http://sass-lang.com/docs.html), add this to your
 `application.css.scss` file:
@@ -52,7 +54,9 @@ Alternatively, if you already have a CSS file provided by a conditional
 comment (say, `application-ie.css`), you can include the ie7 styleshet in
 that:
 
-    *= require font-awesome-ie7.min
+    /*
+     *= require font-awesome-ie7.min
+     */
 
 ## Changes
 
