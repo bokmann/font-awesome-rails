@@ -8,7 +8,9 @@ stylesheets as a Rails engine for use with the asset pipeline.
 
 Add this to your Gemfile:
 
-    gem "font-awesome-rails"
+```ruby
+gem "font-awesome-rails"
+```
 
 and run `bundle install`.
 
@@ -16,20 +18,26 @@ and run `bundle install`.
 
 In your `application.css`, include the css file:
 
-    /*
-     *= require font-awesome
-     */
+```css
+/*
+ *= require font-awesome
+ */
+```
 
 If you prefer [SCSS](http://sass-lang.com/docs.html), add this to your
 `application.css.scss` file:
 
-    @import "font-awesome";
+```scss
+@import "font-awesome";
+```
 
 If you use the
 [Sass indented syntax](http://sass-lang.com/docs/yardoc/file.INDENTED_SYNTAX.html),
 add this to your `application.css.sass` file:
 
-    @import font-awesome
+```sass
+@import font-awesome
+```
 
 ## IE7 Support
 
@@ -37,26 +45,34 @@ If you must support IE7, use a
 [conditional comment](http://en.wikipedia.org/wiki/Conditional_comment) to
 provide the `font-awesome-ie7.min.css` stylesheet to Internet Explorer.
 
-    <!--[if lt IE 8]>
-    <%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
-    <![endif]-->
+```rhtml
+<!--[if lt IE 8]>
+<%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
+<![endif]-->
+```
 
 In haml, that would look like:
 
-    /[if lt IE 8]
-      = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
+```haml
+/[if lt IE 8]
+  = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
+```
 
 Either way, Make sure that `font-awesome-ie7.min.css` is part of `config.assets.precompile` in your `environments/production.rb`.
 
-    config.assets.precompile += %w( font-awesome-ie7.min.css )
+```ruby
+config.assets.precompile += %w( font-awesome-ie7.min.css )
+```
 
 Alternatively, if you already have a CSS file provided by a conditional
 comment (say, `application-ie.css`), you can include the ie7 styleshet in
 that:
 
-    /*
-     *= require font-awesome-ie7.min
-     */
+```css
+/*
+ *= require font-awesome-ie7.min
+ */
+```
 
 ## Changes
 
