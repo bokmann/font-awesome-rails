@@ -36,13 +36,13 @@ If you must support IE7, use a
 provide the `font-awesome-ie7.min.css` stylesheet to Internet Explorer.
 
     <!--[if lt IE 8]>
-    <%= stylesheet_link_tag "font-awesome-ie7.min.css, media: "all" %>
+    <%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
     <![endif]-->
 
 In haml, that would look like:
 
     /[if lt IE 8]
-      = stylesheet_link_tag "font-awesome-ie7.min.css, media: "all"
+      = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
 
 Either way, Make sure that `font-awesome-ie7.min.css` is part of `config.assets.precompile` in your `environments/production.rb`.
 
