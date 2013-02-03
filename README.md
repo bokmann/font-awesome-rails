@@ -56,17 +56,16 @@ that:
 
 ## Changes
 
-    Version   FontAwesome SHA1 Hash    Notes / Other additions
-    --------  ----------------------   ------------------------
-    0.1.0     378b2d7                  Simplest packaging as a gem as possible
-    0.2.0     563a6f3                  Repackaged after their new release
-    0.2.1     563a6f3                  Forgot I had patched the css to reflect the font assetified location.
-    0.3.0     UNKNOWN                  Aditya Sanghi pulled it in and I wasn't watching.
-                                       Will make sure that doesn't happen again.
-    0.4.0     05e5e5b                  Pullup request to 2.0 release of font-awesome
-    0.5.0     contrib, christhekeele   Attempt to prepare request to 3.0 release of font-awesome
-    3.0.1.0   7d173f2                  3.0.1 release (bug fixes and alignment improvements)
-    3.0.2.0   13d5dd3                  3.0.2 release (better IE7 rendering)
+    | Version | FontAwesome SHA1 | Notes / Other additions                                                   |
+    |---------+------------------+---------------------------------------------------------------------------|
+    |   0.1.0 | 378b2d7          | Simplest packaging as a gem as possible                                   |
+    |   0.2.0 | 563a6f3          | Repackaged after their new release                                        |
+    |   0.2.1 | 563a6f3          | Forgot I had patched the css to reflect the font assetified location.     |
+    |   0.3.0 | (unknown)        | (sorry, will make sure that doesn't happen again)                         |
+    |   0.4.0 | 05e5e5b          | Pullup request to 2.0 release of font-awesome                             |
+    |   0.5.0 | contrib          | (christhekeele) Attempt to prepare request to 3.0 release of font-awesome |
+    | 3.0.1.0 | 7d173f2          | 3.0.1 release (bug fixes and alignment improvements)                      |
+    | 3.0.2.0 | 13d5dd3          | 3.0.2 release (better IE7 rendering)                                      |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
