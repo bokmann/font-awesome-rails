@@ -94,11 +94,6 @@ tool like that in order to generate a @font_face tag seems a little much... I
 don't want this gem to require compass for such a trivial thing, so we are
 staying on the vanilla css file for now.
 
-## Todo
-
-* Add a mechanism to test that the assets provided are available on the path
-  expected.
-
 ## License
 
 * The [Font Awesome](http://fortawesome.github.com/Font-Awesome) font is
