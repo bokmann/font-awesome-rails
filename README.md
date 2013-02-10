@@ -1,4 +1,4 @@
-# font-awesome-rails [![Gem Version](https://badge.fury.io/rb/font-awesome-rails.png)](http://badge.fury.io/rb/font-awesome-rails)
+# font-awesome-rails [![Gem Version](https://badge.fury.io/rb/font-awesome-rails.png)](http://badge.fury.io/rb/font-awesome-rails) [![Build Status](https://secure.travis-ci.org/bokmann/font-awesome-rails.png)](http://travis-ci.org/bokmann/font-awesome-rails)
 
 font-awesome-rails provides the
 [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) web fonts and
@@ -93,11 +93,6 @@ wanted some compass libraries.  I'm a fan of compass, but including an entire
 tool like that in order to generate a @font_face tag seems a little much... I
 don't want this gem to require compass for such a trivial thing, so we are
 staying on the vanilla css file for now.
-
-## Todo
-
-* Add a mechanism to test that the assets provided are available on the path
-  expected.
 
 ## License
 
