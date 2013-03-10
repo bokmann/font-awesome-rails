@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem "font-awesome-rails", :path => "../"
+gem "railties", "~> 3.2.0"
+gem "sass-rails", "~> 3.2.0"
+gem "tzinfo"
