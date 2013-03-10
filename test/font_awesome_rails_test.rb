@@ -18,7 +18,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
 
   test "stylesheets are served" do
     get "/assets/font-awesome.css"
-    assert_response :success
+    assert_font_awesome(response)
     get "/assets/font-awesome-ie7.min.css"
     assert_response :success
     get "/assets/font-awesome-ie7.css"
@@ -28,32 +28,34 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
   test "stylesheets contain asset pipeline references to fonts" do
     get "/assets/font-awesome.css"
     assert_match "/assets/fontawesome-webfont.eot",  response.body
-    assert_match "/assets/fontawesome-webfont.eot?#iefix",  response.body
+    assert_match "/assets/fontawesome-webfont.eot?#iefix", response.body
     assert_match "/assets/fontawesome-webfont.woff", response.body
     assert_match "/assets/fontawesome-webfont.ttf",  response.body
   end
 
   test "stylesheet is available in a css sprockets require" do
     get "/assets/sprockets-require.css"
-    assert_response :success
-    assert_match "font-family: 'FontAwesome';", response.body
+    assert_font_awesome(response)
   end
 
   test "stylesheet is available in a sass import" do
     get "/assets/sass-import.css"
-    assert_response :success
-    assert_match "font-family: 'FontAwesome';", response.body
+    assert_font_awesome(response)
   end
 
   test "stylesheet is available in a scss import" do
     get "/assets/scss-import.css"
-    assert_response :success
-    assert_match "font-family: 'FontAwesome';", response.body
+    assert_font_awesome(response)
   end
 
   private
 
   def clean_sprockets_cache
     FileUtils.rm_rf File.expand_path("../dummy/tmp",  __FILE__)
+  end
+
+  def assert_font_awesome(response)
+    assert_response :success
+    assert_match(/font-family:\s*'FontAwesome';/, response.body)
   end
 end
