@@ -5,3 +5,4 @@ pkg/*
 bin
 vendor/ruby
 .rbenv-version
+.sass-cache

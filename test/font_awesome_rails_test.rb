@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
+  teardown { clean_sprockets_cache }
+
   test "engine is loaded" do
     assert_equal ::Rails::Engine, Font::Awesome::Rails::Engine.superclass
   end
@@ -29,5 +31,29 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
     assert_match "/assets/fontawesome-webfont.eot?#iefix",  response.body
     assert_match "/assets/fontawesome-webfont.woff", response.body
     assert_match "/assets/fontawesome-webfont.ttf",  response.body
+  end
+
+  test "stylesheet is available in a css sprockets require" do
+    get "/assets/sprockets-require.css"
+    assert_response :success
+    assert_match "font-family: 'FontAwesome';", response.body
+  end
+
+  test "stylesheet is available in a sass import" do
+    get "/assets/sass-import.css"
+    assert_response :success
+    assert_match "font-family: 'FontAwesome';", response.body
+  end
+
+  test "stylesheet is available in a scss import" do
+    get "/assets/scss-import.css"
+    assert_response :success
+    assert_match "font-family: 'FontAwesome';", response.body
+  end
+
+  private
+
+  def clean_sprockets_cache
+    FileUtils.rm_rf File.expand_path("../dummy/tmp",  __FILE__)
   end
 end

@@ -3,8 +3,7 @@ require File.expand_path('../boot', __FILE__)
 # require "rails/all"
 require "sprockets/railtie"
 
-Bundler.require
-require "font-awesome-rails"
+Bundler.require(:default, :development)
 
 module Dummy
   class Application < Rails::Application
