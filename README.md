@@ -86,6 +86,7 @@ that:
     |   0.5.0 | contrib          | (christhekeele) Attempt to prepare request to 3.0 release of font-awesome |
     | 3.0.1.0 | 7d173f2          | 3.0.1 release (bug fixes and alignment improvements)                      |
     | 3.0.2.0 | 13d5dd3          | 3.0.2 release (better IE7 rendering)                                      |
+    | 3.1.0.0 | a4612d8          | 3.1.0 release (new icons)                                                 |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
