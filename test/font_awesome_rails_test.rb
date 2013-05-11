@@ -31,7 +31,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
     assert_match "/assets/fontawesome-webfont.eot?#iefix", response.body
     assert_match "/assets/fontawesome-webfont.woff", response.body
     assert_match "/assets/fontawesome-webfont.ttf",  response.body
-    assert_match "/assets/fontawesome-webfont.svg",  response.body
+    assert_match "/assets/fontawesome-webfont.svg#fontawesomeregular", response.body
   end
 
   test "stylesheet is available in a css sprockets require" do
