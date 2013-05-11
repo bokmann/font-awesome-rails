@@ -87,6 +87,7 @@ that:
     | 3.0.1.0 | 7d173f2          | 3.0.1 release (bug fixes and alignment improvements)                      |
     | 3.0.2.0 | 13d5dd3          | 3.0.2 release (better IE7 rendering)                                      |
     | 3.1.0.0 | a4612d8          | 3.1.0 release (new icons)                                                 |
+    | 3.1.1.0 | 949a765          | 3.1.1 release (icon fixes)                                                |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
