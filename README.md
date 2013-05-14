@@ -88,6 +88,7 @@ that:
     | 3.0.2.0 | 13d5dd3          | 3.0.2 release (better IE7 rendering)                                      |
     | 3.1.0.0 | a4612d8          | 3.1.0 release (new icons)                                                 |
     | 3.1.1.0 | 949a765          | 3.1.1 release (icon fixes)                                                |
+    | 3.1.1.1 | 949a765          | asset_path -> font_path usage; Now requires Rails >= 3.2.                 |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
@@ -95,6 +96,8 @@ wanted some compass libraries.  I'm a fan of compass, but including an entire
 tool like that in order to generate a @font_face tag seems a little much... I
 don't want this gem to require compass for such a trivial thing, so we are
 staying on the vanilla css file for now.
+
+**Running on Rails 3.1?** Make sure to use version 3.1.1.0 or earlier.
 
 ## License
 
