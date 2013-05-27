@@ -24,6 +24,11 @@ In your `application.css`, include the css file:
  */
 ```
 
+Congrats! You now have scalable vector icon support. Pick an icon and check out the
+[FontAwesome Examples](http://fortawesome.github.io/Font-Awesome/examples/).
+
+### Sass Support
+
 If you prefer [SCSS](http://sass-lang.com/docs.html), add this to your
 `application.css.scss` file:
 
@@ -39,7 +44,7 @@ add this to your `application.css.sass` file:
 @import font-awesome
 ```
 
-## IE7 Support
+### IE7 Support
 
 If you must support IE7, use a
 [conditional comment](http://en.wikipedia.org/wiki/Conditional_comment) to
