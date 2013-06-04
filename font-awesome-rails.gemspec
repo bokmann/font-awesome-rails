@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/bokmann/font-awesome-rails"
   gem.licenses      = ["MIT", "SIL Open Font License"]
 
-  gem.files         = Dir["{app,lib,vendor}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
+  gem.files         = Dir["{app,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
   gem.test_files    = Dir["test/**/*"]
   gem.name          = "font-awesome-rails"
   gem.require_paths = ["lib"]
