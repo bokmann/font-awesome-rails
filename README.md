@@ -95,6 +95,7 @@ that:
     | 3.1.1.0 | 949a765          | 3.1.1 release (icon fixes)                                                |
     | 3.1.1.1 | 949a765          | asset_path -> font_path usage; Now requires Rails >= 3.2.                 |
     | 3.1.1.2 | 949a765          | vendor/assets -> app/assets; Improved Rails 4 support                     |
+    | 3.1.1.3 | 949a765          | repackaged gem; cleaned out extraneous files                              |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
