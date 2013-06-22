@@ -4,7 +4,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
   teardown { clean_sprockets_cache }
 
   test "engine is loaded" do
-    assert_equal ::Rails::Engine, Font::Awesome::Rails::Engine.superclass
+    assert_equal ::Rails::Engine, FontAwesome::Rails::Engine.superclass
   end
 
   test "fonts are served" do
