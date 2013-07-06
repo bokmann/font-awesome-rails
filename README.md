@@ -99,6 +99,7 @@ that:
     | 3.2.0.0 | a9065a1          | 3.2.0 release (new icons)                                                 |
     | 3.2.1.0 | b1a8ad4          | 3.2.1 release (stylesheet fixes)                                          |
     | 3.2.1.1 | b1a8ad4          | renamed Font::Awesome module to FontAwesome to avoid Font name conflicts  |
+    | 3.2.1.2 | b1a8ad4          | fixed suffix on svg font url during asset precompilation                  |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
