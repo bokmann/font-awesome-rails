@@ -79,6 +79,49 @@ that:
  */
 ```
 
+### Helpers
+
+There are also some helpers that you can include to make your views
+_icontastic!_.
+
+```ruby
+class ApplicationController < ActionController::Base
+  helper FontAwesome::Rails::IconHelper
+end
+```
+
+Afterwards, your views will have `fa_icon` and `fa_stacked_icon` helpers
+available.
+
+```ruby
+fa_icon "camera-retro"
+# => <i class="icon-camera-retro"></i>
+
+fa_icon "camera-retro", text: "Take a photo"
+# => <i class="icon-camera-retro"></i> Take a photo
+
+fa_icon "quote-left 4x muted", class: "pull-left"
+# => <i class="icon-quote-left icon-4x icon-muted pull-left"></i>
+
+content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
+# => <li><i class="icon-ok icon-li"></i> Bulleted list item</li>
+```
+
+```ruby
+fa_stacked_icon "check-empty", "twitter"
+# => <span class="icon-stack">
+# =>   <i class="icon-check-empty icon-stack-base"></i>
+# =>   <i class="icon-twitter"></i>
+# => </span>
+
+fa_stacked_icon "sign-blank", "terminal light", class: "pull-right", text: "Hi!"
+# => <span class="icon-stack pull-right">
+# =>   <i class="icon-sign-blank icon-stack-base"></i>
+# =>   <i class="icon-terminal icon-light"></i>
+# => </span> Hi!
+
+```
+
 ## Changes
 
     | Version | FontAwesome SHA1 | Notes / Other additions                                                   |
