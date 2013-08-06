@@ -25,9 +25,9 @@ module FontAwesome
       #   content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
       #   # => <li><i class="icon-ok icon-li"></i> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
-        classes = icon_names(names).concat(Array(options[:class]))
+        classes = Private.icon_names(names).concat(Array(options[:class]))
         icon = content_tag(:i, nil, :class => classes)
-        icon_join(icon, options[:text])
+        Private.icon_join(icon, options[:text])
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -47,26 +47,28 @@ module FontAwesome
       #   # =>   <i class="icon-terminal icon-light"></i>
       #   # => </span> Hi!
       def fa_stacked_icon(base_names, main_names, options = {})
-        classes = icon_names("stack").concat(Array(options[:class]))
-        base = fa_icon(base_names, :class => icon_names("stack-base"))
-        icon = fa_icon(main_names)
-        icon = content_tag(:span, safe_join([base, icon]), :class => classes)
-        icon_join(icon, options[:text])
+        classes = Private.icon_names("stack").concat(Array(options[:class]))
+        base = fa_icon(base_names, :class => Private.icon_names("stack-base"))
+        main = fa_icon(main_names)
+        icon = content_tag(:span, safe_join([base, main]), :class => classes)
+        Private.icon_join(icon, options[:text])
       end
 
-      private
+      module Private
+        extend ActionView::Helpers::OutputSafetyHelper
 
-      def icon_join(icon, text)
-        return icon if text.blank?
-        safe_join([icon, ERB::Util.html_escape(text)], " ")
-      end
+        def self.icon_join(icon, text)
+          return icon if text.blank?
+          safe_join([icon, ERB::Util.html_escape(text)], " ")
+        end
 
-      def icon_names(names = [])
-        array_value(names).map { |n| "icon-#{n}" }
-      end
+        def self.icon_names(names = [])
+          array_value(names).map { |n| "icon-#{n}" }
+        end
 
-      def array_value(value = [])
-        value.is_a?(Array) ? value : value.split(/\s+/)
+        def self.array_value(value = [])
+          value.is_a?(Array) ? value : value.split(/\s+/)
+        end
       end
     end
   end
