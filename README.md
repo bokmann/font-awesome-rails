@@ -81,17 +81,8 @@ that:
 
 ### Helpers
 
-There are also some helpers that you can include to make your views
-_icontastic!_.
-
-```ruby
-class ApplicationController < ActionController::Base
-  helper FontAwesome::Rails::IconHelper
-end
-```
-
-Afterwards, your views will have `fa_icon` and `fa_stacked_icon` helpers
-available.
+There are also some helpers (`fa_icon` and `fa_stacked_icon`) that make your
+views _icontastic!_.
 
 ```ruby
 fa_icon "camera-retro"

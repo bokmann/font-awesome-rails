@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class IconHelperTest < ActionView::TestCase
-  include FontAwesome::Rails::IconHelper
+class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   test "#fa_icon with no args should render a flag icon" do
     assert_icon i("icon-flag")
