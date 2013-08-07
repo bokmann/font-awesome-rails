@@ -49,6 +49,10 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_icon "#{i("icon-camera-retro pull-right")} Take a photo", "camera-retro", :text => "Take a photo", :class => "pull-right"
   end
 
+  test "#fa_icon should pass all other options through" do
+    assert_icon %(<i class="icon-user" data-id="123"></i>), "user", :data => { :id => 123 }
+  end
+
   test "#fa_stacked_icon with no args should render a flag icon" do
     expected = %(<span class="icon-stack">#{i("icon-stack-base")}#{i("icon-flag")}</span>)
     assert_stacked_icon expected
@@ -79,6 +83,16 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   test "#fa_stacked_icon should not html escape safe text" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span> <script>)
     assert_stacked_icon expected, "twitter", :base => "check-empty", :text => "<script>".html_safe
+  end
+
+  test "#fa_stacked_icon should accept options for base and main icons" do
+    expected = %(<span class="icon-stack">#{i("icon-camera text-info")}#{i("icon-ban-circle icon-stack-base text-error")}</span>)
+    assert_stacked_icon expected, "camera", :base => "ban-circle", :reverse => true, :base_options => { class: "text-error" }, :icon_options => { class: "text-info" }
+  end
+
+  test "#fa_stacked_icon should pass all other options through" do
+    expected = %(<span class="icon-stack" data-id="123">#{i("icon-check-empty icon-stack-base")}#{i("icon-user")}</span>)
+    assert_stacked_icon expected, "user", :base => "check-empty", :data => { :id => 123 }
   end
 
   private

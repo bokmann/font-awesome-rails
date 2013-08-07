@@ -22,12 +22,16 @@ module FontAwesome
       #   fa_icon "quote-left 4x muted", class: "pull-left"
       #   # => <i class="icon-quote-left icon-4x icon-muted pull-left"></i>
       #
+      #   fa_icon "user", data: { id: 123 }
+      #   # => <i class="icon-user" data-id="123"></i>
+      #
       #   content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
       #   # => <li><i class="icon-ok icon-li"></i> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
-        classes = Private.icon_names(names).concat(Array(options[:class]))
-        icon = content_tag(:i, nil, :class => classes)
-        Private.icon_join(icon, options[:text])
+        classes = Private.icon_names(names).concat(Array(options.delete(:class)))
+        text = options.delete(:text)
+        icon = content_tag(:i, nil, options.merge(:class => classes))
+        Private.icon_join(icon, text)
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -53,13 +57,15 @@ module FontAwesome
       #   # =>   <i class="icon-ban-circle icon-stack-base"></i>
       #   # => </span>
       def fa_stacked_icon(names = "flag", options = {})
-        classes = Private.icon_names("stack").concat(Array(options[:class]))
-        base = fa_icon(Private.array_value(options[:base]).push("stack-base"))
-        main = fa_icon(names)
-        icons = [base, main]
-        icons.reverse! if options[:reverse]
-        icon = content_tag(:span, safe_join(icons), :class => classes)
-        Private.icon_join(icon, options[:text])
+        classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
+        base_names = Private.array_value(options.delete(:base)).push("stack-base")
+        base = fa_icon(base_names, options.delete(:base_options) || {})
+        icon = fa_icon(names, options.delete(:icon_options) || {})
+        icons = [base, icon]
+        icons.reverse! if options.delete(:reverse)
+        text = options.delete(:text)
+        stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
+        Private.icon_join(stacked_icon, text)
       end
 
       module Private
