@@ -49,26 +49,36 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_icon "#{i("icon-camera-retro pull-right")} Take a photo", "camera-retro", :text => "Take a photo", :class => "pull-right"
   end
 
+  test "#fa_stacked_icon with no args should render a flag icon" do
+    expected = %(<span class="icon-stack">#{i("icon-stack-base")}#{i("icon-flag")}</span>)
+    assert_stacked_icon expected
+  end
+
   test "#fa_stacked_icon should render a stacked icon" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span>)
-    assert_stacked_icon expected, "check-empty", "twitter"
+    assert_stacked_icon expected, "twitter", :base => "check-empty"
     expected = %(<span class="icon-stack">#{i("icon-sign-blank icon-stack-base")}#{i("icon-terminal icon-light")}</span>)
-    assert_stacked_icon expected, "sign-blank", "terminal light"
+    assert_stacked_icon expected, ["terminal", "light"], :base => ["sign-blank"]
   end
 
   test "#fa_stacked_icon should incorporate additional class styles" do
     expected = %(<span class="icon-stack pull-right">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span>)
-    assert_stacked_icon expected, "check-empty", "twitter", :class => "pull-right"
+    assert_stacked_icon expected, "twitter", :base => "check-empty", :class => "pull-right"
+  end
+
+  test "#fa_stacked_icon should reverse the stack" do
+    expected = %(<span class="icon-stack">#{i("icon-facebook")}#{i("icon-ban-circle icon-stack-base")}</span>)
+    assert_stacked_icon expected, "facebook", :base => "ban-circle", :reverse => "true"
   end
 
   test "#fa_stacked_icon should html escape text" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span> &lt;script&gt;)
-    assert_stacked_icon expected, "check-empty", "twitter", :text => "<script>"
+    assert_stacked_icon expected, "twitter", :base => "check-empty", :text => "<script>"
   end
 
   test "#fa_stacked_icon should not html escape safe text" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span> <script>)
-    assert_stacked_icon expected, "check-empty", "twitter", :text => "<script>".html_safe
+    assert_stacked_icon expected, "twitter", :base => "check-empty", :text => "<script>".html_safe
   end
 
   private

@@ -99,13 +99,13 @@ content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
 ```
 
 ```ruby
-fa_stacked_icon "check-empty", "twitter"
+fa_stacked_icon "twitter", base: "check-empty"
 # => <span class="icon-stack">
 # =>   <i class="icon-check-empty icon-stack-base"></i>
 # =>   <i class="icon-twitter"></i>
 # => </span>
 
-fa_stacked_icon "sign-blank", "terminal light", class: "pull-right", text: "Hi!"
+fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text: "Hi!"
 # => <span class="icon-stack pull-right">
 # =>   <i class="icon-sign-blank icon-stack-base"></i>
 # =>   <i class="icon-terminal icon-light"></i>

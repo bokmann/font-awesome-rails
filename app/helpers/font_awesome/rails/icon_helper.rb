@@ -35,22 +35,30 @@ module FontAwesome
       #
       # Examples
       #
-      #   fa_stacked_icon "check-empty", "twitter"
+      #   fa_stacked_icon "twitter", base: "check-empty"
       #   # => <span class="icon-stack">
       #   # =>   <i class="icon-check-empty icon-stack-base"></i>
       #   # =>   <i class="icon-twitter"></i>
       #   # => </span>
       #
-      #   fa_stacked_icon "sign-blank", "terminal light", class: "pull-right", text: "Hi!"
+      #   fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text: "Hi!"
       #   # => <span class="icon-stack pull-right">
       #   # =>   <i class="icon-sign-blank icon-stack-base"></i>
       #   # =>   <i class="icon-terminal icon-light"></i>
       #   # => </span> Hi!
-      def fa_stacked_icon(base_names, main_names, options = {})
+      #
+      #   fa_stacked_icon "camera", base: "ban-circle", reverse: true
+      #   # => <span class="icon-stack">
+      #   # =>   <i class="icon-camera"></i>
+      #   # =>   <i class="icon-ban-circle icon-stack-base"></i>
+      #   # => </span>
+      def fa_stacked_icon(names = "flag", options = {})
         classes = Private.icon_names("stack").concat(Array(options[:class]))
-        base = fa_icon(base_names, :class => Private.icon_names("stack-base"))
-        main = fa_icon(main_names)
-        icon = content_tag(:span, safe_join([base, main]), :class => classes)
+        base = fa_icon(Private.array_value(options[:base]).push("stack-base"))
+        main = fa_icon(names)
+        icons = [base, main]
+        icons.reverse! if options[:reverse]
+        icon = content_tag(:span, safe_join(icons), :class => classes)
         Private.icon_join(icon, options[:text])
       end
 
@@ -67,7 +75,7 @@ module FontAwesome
         end
 
         def self.array_value(value = [])
-          value.is_a?(Array) ? value : value.split(/\s+/)
+          value.is_a?(Array) ? value : value.to_s.split(/\s+/)
         end
       end
     end
