@@ -87,7 +87,7 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   test "#fa_stacked_icon should accept options for base and main icons" do
     expected = %(<span class="icon-stack">#{i("icon-camera text-info")}#{i("icon-ban-circle icon-stack-base text-error")}</span>)
-    assert_stacked_icon expected, "camera", :base => "ban-circle", :reverse => true, :base_options => { class: "text-error" }, :icon_options => { class: "text-info" }
+    assert_stacked_icon expected, "camera", :base => "ban-circle", :reverse => true, :base_options => { :class => "text-error" }, :icon_options => { :class => "text-info" }
   end
 
   test "#fa_stacked_icon should pass all other options through" do
