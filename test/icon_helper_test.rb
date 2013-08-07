@@ -51,24 +51,24 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   test "#fa_stacked_icon should render a stacked icon" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span>)
-    assert_dom_equal expected, fa_stacked_icon("check-empty", "twitter")
+    assert_stacked_icon expected, "check-empty", "twitter"
     expected = %(<span class="icon-stack">#{i("icon-sign-blank icon-stack-base")}#{i("icon-terminal icon-light")}</span>)
-    assert_dom_equal expected, fa_stacked_icon("sign-blank", "terminal light")
+    assert_stacked_icon expected, "sign-blank", "terminal light"
   end
 
   test "#fa_stacked_icon should incorporate additional class styles" do
     expected = %(<span class="icon-stack pull-right">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span>)
-    assert_dom_equal expected, fa_stacked_icon("check-empty", "twitter", :class => "pull-right")
+    assert_stacked_icon expected, "check-empty", "twitter", :class => "pull-right"
   end
 
   test "#fa_stacked_icon should html escape text" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span> &lt;script&gt;)
-    assert_dom_equal expected, fa_stacked_icon("check-empty", "twitter", :text => "<script>")
+    assert_stacked_icon expected, "check-empty", "twitter", :text => "<script>"
   end
 
   test "#fa_stacked_icon should not html escape safe text" do
     expected = %(<span class="icon-stack">#{i("icon-check-empty icon-stack-base")}#{i("icon-twitter")}</span> <script>)
-    assert_dom_equal expected, fa_stacked_icon("check-empty", "twitter", :text => "<script>".html_safe)
+    assert_stacked_icon expected, "check-empty", "twitter", :text => "<script>".html_safe
   end
 
   private
@@ -76,6 +76,11 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   def assert_icon(expected, *args)
     message = "`fa_icon(#{args.inspect[1...-1]})` should return `#{expected}`"
     assert_dom_equal expected, fa_icon(*args), message
+  end
+
+  def assert_stacked_icon(expected, *args)
+    message = "`fa_stacked_icon(#{args.inspect[1...-1]})` should return `#{expected}`"
+    assert_dom_equal expected, fa_stacked_icon(*args), message
   end
 
   def i(classes)
