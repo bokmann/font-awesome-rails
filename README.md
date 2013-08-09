@@ -134,6 +134,7 @@ fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text:
     | 3.2.1.0 | b1a8ad4          | 3.2.1 release (stylesheet fixes)                                          |
     | 3.2.1.1 | b1a8ad4          | renamed Font::Awesome module to FontAwesome to avoid Font name conflicts  |
     | 3.2.1.2 | b1a8ad4          | fixed suffix on svg font url during asset precompilation                  |
+    | 3.2.1.3 | b1a8ad4          | added `fa_icon` and `fa_stacked_icon` view helpers                        |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
