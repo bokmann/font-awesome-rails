@@ -113,6 +113,9 @@ fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text:
 
 ```
 
+**Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
+so that these helpers are automatically loaded in production environments.
+
 ## Changes
 
     | Version | FontAwesome SHA1 | Notes / Other additions                                                   |
