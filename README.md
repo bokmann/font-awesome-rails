@@ -23,6 +23,7 @@ In your `application.css`, include the css file:
  *= require font-awesome
  */
 ```
+Then restart your webserver if it was previously running.
 
 Congrats! You now have scalable vector icon support. Pick an icon and check out the
 [FontAwesome Examples](http://fortawesome.github.io/Font-Awesome/examples/).
