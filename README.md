@@ -23,11 +23,7 @@ In your `application.css`, include the css file:
  *= require font-awesome
  */
 ```
-Then run
-```
-rake assets:precompile
-```
-and restart your server if it was running.
+Then run `rake assets:precompile` and restart your server if it was running.
 
 Congrats! You now have scalable vector icon support. Pick an icon and check out the
 [FontAwesome Examples](http://fortawesome.github.io/Font-Awesome/examples/).
