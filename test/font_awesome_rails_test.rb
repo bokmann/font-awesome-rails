@@ -19,10 +19,6 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
   test "stylesheets are served" do
     get "/assets/font-awesome.css"
     assert_font_awesome(response)
-    get "/assets/font-awesome-ie7.min.css"
-    assert_response :success
-    get "/assets/font-awesome-ie7.css"
-    assert_response :success
   end
 
   test "stylesheets contain asset pipeline references to fonts" do

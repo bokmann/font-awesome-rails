@@ -45,41 +45,6 @@ add this to your `application.css.sass` file:
 @import font-awesome
 ```
 
-### IE7 Support
-
-If you must support IE7, use a
-[conditional comment](http://en.wikipedia.org/wiki/Conditional_comment) to
-provide the `font-awesome-ie7.min.css` stylesheet to Internet Explorer.
-
-```rhtml
-<!--[if lt IE 8]>
-<%= stylesheet_link_tag "font-awesome-ie7.min.css", media: "all" %>
-<![endif]-->
-```
-
-In haml, that would look like:
-
-```haml
-/[if lt IE 8]
-  = stylesheet_link_tag "font-awesome-ie7.min.css", media: "all"
-```
-
-Either way, Make sure that `font-awesome-ie7.min.css` is part of `config.assets.precompile` in your `environments/production.rb`.
-
-```ruby
-config.assets.precompile += %w( font-awesome-ie7.min.css )
-```
-
-Alternatively, if you already have a CSS file provided by a conditional
-comment (say, `application-ie.css`), you can include the ie7 styleshet in
-that:
-
-```css
-/*
- *= require font-awesome-ie7.min
- */
-```
-
 ### Helpers
 
 There are also some helpers (`fa_icon` and `fa_stacked_icon`) that make your
