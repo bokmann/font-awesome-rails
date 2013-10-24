@@ -7,28 +7,30 @@ module FontAwesome
       # Examples
       #
       #   fa_icon "camera-retro"
-      #   # => <i class="icon-camera-retro"></i>
+      #   # => <i class="fa fa-camera-retro"></i>
       #
       #   fa_icon "camera-retro", text: "Take a photo"
-      #   # => <i class="icon-camera-retro"></i> Take a photo
+      #   # => <i class="fa fa-camera-retro"></i> Take a photo
       #
       #   fa_icon "camera-retro 2x"
-      #   # => <i class="icon-camera-retro icon-2x"></i>
+      #   # => <i class="fa fa-camera-retro fa-2x"></i>
       #   fa_icon ["camera-retro", "4x"]
-      #   # => <i class="icon-camera-retro icon-4x"></i>
-      #   fa_icon "spinner spin large"
-      #   # => <i class="icon-spinner icon-spin icon-large">
+      #   # => <i class="fa fa-camera-retro fa-4x"></i>
+      #   fa_icon "spinner spin lg"
+      #   # => <i class="fa fa-spinner fa-spin fa-lg">
       #
-      #   fa_icon "quote-left 4x muted", class: "pull-left"
-      #   # => <i class="icon-quote-left icon-4x icon-muted pull-left"></i>
+      #   fa_icon "quote-left 4x", class: "pull-left"
+      #   # => <i class="fa fa-quote-left fa-4x pull-left"></i>
       #
       #   fa_icon "user", data: { id: 123 }
-      #   # => <i class="icon-user" data-id="123"></i>
+      #   # => <i class="fa fa-user" data-id="123"></i>
       #
       #   content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
-      #   # => <li><i class="icon-ok icon-li"></i> Bulleted list item</li>
+      #   # => <li><i class="fa fa-ok fa-li"></i> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
-        classes = Private.icon_names(names).concat(Array(options.delete(:class)))
+        classes = ["fa"]
+        classes.concat Private.icon_names(names)
+        classes.concat Array(options.delete(:class))
         text = options.delete(:text)
         icon = content_tag(:i, nil, options.merge(:class => classes))
         Private.icon_join(icon, text)
@@ -39,26 +41,27 @@ module FontAwesome
       #
       # Examples
       #
-      #   fa_stacked_icon "twitter", base: "check-empty"
-      #   # => <span class="icon-stack">
-      #   # =>   <i class="icon-check-empty icon-stack-base"></i>
-      #   # =>   <i class="icon-twitter"></i>
+      #   fa_stacked_icon "twitter", base: "square-o"
+      #   # => <span class="fa-stack">
+      #   # =>   <i class="fa fa-square-o fa-stack-2x"></i>
+      #   # =>   <i class="fa fa-twitter fa-stack-1x"></i>
       #   # => </span>
       #
-      #   fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text: "Hi!"
-      #   # => <span class="icon-stack pull-right">
-      #   # =>   <i class="icon-sign-blank icon-stack-base"></i>
-      #   # =>   <i class="icon-terminal icon-light"></i>
+      #   fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
+      #   # => <span class="fa-stack pull-right">
+      #   # =>   <i class="fa fa-square fa-stack-2x"></i>
+      #   # =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
       #   # => </span> Hi!
       #
       #   fa_stacked_icon "camera", base: "ban-circle", reverse: true
-      #   # => <span class="icon-stack">
-      #   # =>   <i class="icon-camera"></i>
-      #   # =>   <i class="icon-ban-circle icon-stack-base"></i>
+      #   # => <span class="fa-stack">
+      #   # =>   <i class="fa fa-camera fa-stack-1x"></i>
+      #   # =>   <i class="fa fa-ban-circle fa-stack-2x"></i>
       #   # => </span>
       def fa_stacked_icon(names = "flag", options = {})
         classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
-        base_names = Private.array_value(options.delete(:base)).push("stack-base")
+        base_names = Private.array_value(options.delete(:base) || "square-o").push("stack-2x")
+        names = Private.array_value(names).push("stack-1x")
         base = fa_icon(base_names, options.delete(:base_options) || {})
         icon = fa_icon(names, options.delete(:icon_options) || {})
         icons = [base, icon]
@@ -77,7 +80,7 @@ module FontAwesome
         end
 
         def self.icon_names(names = [])
-          array_value(names).map { |n| "icon-#{n}" }
+          array_value(names).map { |n| "fa-#{n}" }
         end
 
         def self.array_value(value = [])
