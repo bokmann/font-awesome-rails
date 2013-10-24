@@ -68,7 +68,7 @@ content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
 fa_stacked_icon "twitter", base: "square-o"
 # => <span class="fa-stack">
 # =>   <i class="fa fa-square-o fa-stack-2x"></i>
-# =>   <i class="fa fa-twitter"></i>
+# =>   <i class="fa fa-twitter fa-stack-1x"></i>
 # => </span>
 
 fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
