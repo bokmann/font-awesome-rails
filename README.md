@@ -60,8 +60,8 @@ fa_icon "camera-retro", text: "Take a photo"
 fa_icon "quote-left 4x muted", class: "muted pull-left"
 # => <i class="fa fa-quote-left fa-4x muted pull-left"></i>
 
-content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
-# => <li><i class="fa fa-ok fa-li"></i> Bulleted list item</li>
+content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
+# => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
 ```
 
 ```ruby

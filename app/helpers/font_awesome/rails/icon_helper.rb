@@ -25,8 +25,8 @@ module FontAwesome
       #   fa_icon "user", data: { id: 123 }
       #   # => <i class="fa fa-user" data-id="123"></i>
       #
-      #   content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
-      #   # => <li><i class="fa fa-ok fa-li"></i> Bulleted list item</li>
+      #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
+      #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
         classes = ["fa"]
         classes.concat Private.icon_names(names)

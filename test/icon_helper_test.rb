@@ -21,16 +21,16 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   test "#fa_icon should render icons with array modifiers" do
     assert_icon i("fa fa-flag"),                  ["flag"]
-    assert_icon i("fa fa-ok fa-li"),              ["ok", "li"]
+    assert_icon i("fa fa-check fa-li"),           ["check", "li"]
     assert_icon i("fa fa-flag fa-4x"),            ["flag", "4x"]
     assert_icon i("fa fa-refresh fa-2x fa-spin"), ["refresh", "2x", "spin"]
   end
 
   test "#fa_icon should incorporate additional class styles" do
-    assert_icon i("fa fa-flag pull-right"),             "flag",         :class => "pull-right"
-    assert_icon i("fa fa-flag fa-2x pull-right"),       ["flag", "2x"], :class => ["pull-right"]
-    assert_icon i("fa fa-ok fa-li pull-right special"), "ok li",        :class => "pull-right special"
-    assert_icon i("fa fa-ok pull-right special"),       "ok",           :class => ["pull-right", "special"]
+    assert_icon i("fa fa-flag pull-right"),                "flag",         :class => "pull-right"
+    assert_icon i("fa fa-flag fa-2x pull-right"),          ["flag", "2x"], :class => ["pull-right"]
+    assert_icon i("fa fa-check fa-li pull-right special"), "check li",     :class => "pull-right special"
+    assert_icon i("fa fa-check pull-right special"),       "check",        :class => ["pull-right", "special"]
   end
 
   test "#fa_icon should incorporate a text suffix" do
