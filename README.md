@@ -52,29 +52,29 @@ views _icontastic!_.
 
 ```ruby
 fa_icon "camera-retro"
-# => <i class="icon-camera-retro"></i>
+# => <i class="fa fa-camera-retro"></i>
 
 fa_icon "camera-retro", text: "Take a photo"
-# => <i class="icon-camera-retro"></i> Take a photo
+# => <i class="fa fa-camera-retro"></i> Take a photo
 
-fa_icon "quote-left 4x muted", class: "pull-left"
-# => <i class="icon-quote-left icon-4x icon-muted pull-left"></i>
+fa_icon "quote-left 4x muted", class: "muted pull-left"
+# => <i class="fa fa-quote-left fa-4x muted pull-left"></i>
 
 content_tag(:li, fa_icon("ok li", text: "Bulleted list item"))
-# => <li><i class="icon-ok icon-li"></i> Bulleted list item</li>
+# => <li><i class="fa fa-ok fa-li"></i> Bulleted list item</li>
 ```
 
 ```ruby
-fa_stacked_icon "twitter", base: "check-empty"
-# => <span class="icon-stack">
-# =>   <i class="icon-check-empty icon-stack-base"></i>
-# =>   <i class="icon-twitter"></i>
+fa_stacked_icon "twitter", base: "square-o"
+# => <span class="fa-stack">
+# =>   <i class="fa fa-square-o fa-stack-2x"></i>
+# =>   <i class="fa fa-twitter"></i>
 # => </span>
 
-fa_stacked_icon "terminal light", base: "sign-blank", class: "pull-right", text: "Hi!"
-# => <span class="icon-stack pull-right">
-# =>   <i class="icon-sign-blank icon-stack-base"></i>
-# =>   <i class="icon-terminal icon-light"></i>
+fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
+# => <span class="fa-stack pull-right">
+# =>   <i class="fa fa-square fa-stack-2x"></i>
+# =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
 # => </span> Hi!
 
 ```
