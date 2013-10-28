@@ -105,6 +105,7 @@ so that these helpers are automatically loaded in production environments.
     | 3.2.1.2 | b1a8ad4          | fixed suffix on svg font url during asset precompilation                  |
     | 3.2.1.3 | b1a8ad4          | added `fa_icon` and `fa_stacked_icon` view helpers                        |
     | 4.0.0.0 | 4e92eeb          | 4.0.0 release (new naming conventions, new icons, IE7 support dropped)    |
+    | 4.0.1.0 | c84c8ab          | 4.0.1 release (fixed hdd icon and fa-stack alignment)                     |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
