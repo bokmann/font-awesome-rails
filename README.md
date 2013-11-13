@@ -117,6 +117,17 @@ staying on the vanilla css file for now.
 
 **Running on Rails 3.1?** Make sure to use version 3.1.1.0 or earlier.
 
+**Upgrading from 3.*?** FontAwesome now requires the use of the fa class
+with every icon. Prepend the `fa` class to existing icons:
+
+```css
+  /* FontAwesome 3 Syntax */
+  <i class="icon-github"></i>
+  
+  /* FontAwesome 4 Syntax */
+  <i class="fa fa-github"></i>
+```
+
 ## License
 
 * The [Font Awesome](http://fortawesome.github.com/Font-Awesome) font is
