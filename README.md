@@ -79,6 +79,20 @@ fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "
 
 ```
 
+Put text first!
+```ruby
+fa_stacked_icon "camera-retro", text: "Take a photo", text_first: true
+# => Take a photo <i class="fa fa-camera-retro"></i>
+
+fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
+# => <span class="fa-stack">
+# =>   Hi!
+# =>   <i class="fa fa-square fa-stack-2x"></i>
+# =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
+# => </span>
+
+```
+
 **Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
 so that these helpers are automatically loaded in production environments.
 
@@ -123,7 +137,7 @@ with every icon. Prepend the `fa` class to existing icons:
 ```css
   /* FontAwesome 3 Syntax */
   <i class="icon-github"></i>
-  
+
   /* FontAwesome 4 Syntax */
   <i class="fa fa-github"></i>
 ```
