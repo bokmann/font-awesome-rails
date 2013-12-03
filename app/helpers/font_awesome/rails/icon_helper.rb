@@ -32,8 +32,10 @@ module FontAwesome
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
+        text_first = options.delete(:text_first)
         icon = content_tag(:i, nil, options.merge(:class => classes))
-        Private.icon_join(icon, text)
+
+        Private.icon_join(icon, text, (true if text_first))
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -67,16 +69,20 @@ module FontAwesome
         icons = [base, icon]
         icons.reverse! if options.delete(:reverse)
         text = options.delete(:text)
+        text_first = options.delete(:text_first)
         stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
-        Private.icon_join(stacked_icon, text)
+
+        Private.icon_join(stacked_icon, text, (true if text_first))
       end
 
       module Private
         extend ActionView::Helpers::OutputSafetyHelper
 
-        def self.icon_join(icon, text)
+        def self.icon_join(icon, text, reverse)
           return icon if text.blank?
-          safe_join([icon, ERB::Util.html_escape(text)], " ")
+          icon_order = [icon, ERB::Util.html_escape(text)]
+          icon_order.reverse! if reverse
+          safe_join(icon_order, " ")
         end
 
         def self.icon_names(names = [])
