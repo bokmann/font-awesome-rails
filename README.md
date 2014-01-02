@@ -128,6 +128,24 @@ with every icon. Prepend the `fa` class to existing icons:
   <i class="fa fa-github"></i>
 ```
 
+**Note when deploying to sub-domains
+It is sometimes the case that deploying a Rails application to a production environment requires the application to be hosted at a sub-domain on the server. This may be the case, for example, if Apache HTTPD or Nginx is being used as a front-end proxy server, with Rails handling only requests that come in to a sub-domain such as `http://myserver.example.com/myrailsapp`. In this case, the FontAwesome gem (and other asset-serving engines) needs to know the sub-domain, otherwise you can experience a problem roughly described as ["my app works fine in development, but fails when
+I deploy it"](https://github.com/bokmann/font-awesome-rails/issues/74). 
+
+Fortunately there is an easy solution. In the environment file for the deployed version of the app, for example `config/environments/production.rb`,
+set the config option `relative_url_root`:
+
+    MyApp::Application.configure do
+      ...
+
+      # set the relative root, because we're deploying to /myrailsapp
+      config.action_controller.relative_url_root  = "/myrailsapp"
+
+      ...
+    end
+
+  The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`, so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
+
 ## License
 
 * The [Font Awesome](http://fortawesome.github.com/Font-Awesome) font is
