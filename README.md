@@ -123,24 +123,24 @@ with every icon. Prepend the `fa` class to existing icons:
 ```css
   /* FontAwesome 3 Syntax */
   <i class="icon-github"></i>
-  
+
   /* FontAwesome 4 Syntax */
   <i class="fa fa-github"></i>
 ```
 
 **Note when deploying to sub-domains**
 It is sometimes the case that deploying a Rails application to a production
-environment requires the application to be hosted at a sub-domain on the server. 
-This may be the case, for example, if Apache HTTPD or Nginx is being used as a 
-front-end proxy server, with Rails handling only requests that come in to a sub-domain 
-such as `http://myserver.example.com/myrailsapp`. In this case, the 
-FontAwesome gem (and other asset-serving engines) needs to know the sub-domain, 
-otherwise you can experience a problem roughly described as ["my app works 
-fine in development, but fails when I deploy 
-it"](https://github.com/bokmann/font-awesome-rails/issues/74). 
+environment requires the application to be hosted at a sub-domain on the server.
+This may be the case, for example, if Apache HTTPD or Nginx is being used as a
+front-end proxy server, with Rails handling only requests that come in to a sub-domain
+such as `http://myserver.example.com/myrailsapp`. In this case, the
+FontAwesome gem (and other asset-serving engines) needs to know the sub-domain,
+otherwise you can experience a problem roughly described as ["my app works
+fine in development, but fails when I deploy
+it"](https://github.com/bokmann/font-awesome-rails/issues/74).
 
-To fix this, set the *relative URL root* for the application. In the 
-environment file for the deployed version of the app, for example 
+To fix this, set the *relative URL root* for the application. In the
+environment file for the deployed version of the app, for example
 `config/environments/production.rb`,
 set the config option `action_controller.relative_url_root`:
 
@@ -153,7 +153,7 @@ set the config option `action_controller.relative_url_root`:
       ...
     end
 
-The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`, 
+The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`,
 so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
 
 ## License
