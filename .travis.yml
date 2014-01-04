@@ -3,6 +3,8 @@ cache: bundler
 before_install:
   - gem update --system 2.1.11
   - gem --version
+  - gem install bundler -v '>= 1.5.1'
+  - bundle --version
 rvm:
   - 1.9.3
   - 2.0.0
