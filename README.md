@@ -45,6 +45,16 @@ add this to your `application.css.sass` file:
 @import font-awesome
 ```
 
+### Less Support
+
+If you are using [Less](http://lesscss.org), add this to your `application.less` file:
+
+```less
+@import "font-awesome.css"
+```
+
+> Special attention to the `.css` at the end so less will be able know how to handle font-awesome
+
 ### Helpers
 
 There are also some helpers (`fa_icon` and `fa_stacked_icon`) that make your
