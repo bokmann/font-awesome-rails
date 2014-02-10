@@ -30,7 +30,7 @@ Congrats! You now have scalable vector icon support. Pick an icon and check out 
 
 ### Sass Support
 
-If you prefer [SCSS](http://sass-lang.com/docs.html), add this to your
+If you prefer [SCSS](http://sass-lang.com/documentation/file.SASS_REFERENCE.html), add this to your
 `application.css.scss` file:
 
 ```scss
