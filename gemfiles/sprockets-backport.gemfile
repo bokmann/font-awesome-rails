@@ -1,0 +1,13 @@
+source 'https://rubygems.org'
+
+# See:
+# http://blog.logdown.com/posts/171593-using-rails-4-asset-pipeline-on-rails-3-for-faster-deploy
+# https://github.com/rails/sprockets-rails/issues/98
+# https://discussion.heroku.com/t/using-the-rails-4-asset-pipeline-in-rails-3-apps-for-faster-deploys/205
+
+gemspec :path => "../"
+gem "railties", :github => "rails/rails", :branch => "3-2-stable"
+gem "sprockets", "2.2.2.backport2"
+gem "sprockets-rails", "2.0.0.backport1"
+gem "sass-rails", :github => "guilleiguaran/sass-rails", :branch => "backport"
+gem "tzinfo"
