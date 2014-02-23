@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem "font-awesome-rails", :path => "../"
+gemspec :path => "../"
 gem "railties", :github => "rails/rails", :branch => "master"
 gem "sass-rails", :github => "rails/sass-rails", :branch => "master"

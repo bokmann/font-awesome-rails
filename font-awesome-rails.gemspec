@@ -18,6 +18,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency "railties", ">= 3.2", "< 5.0"
 
   gem.add_development_dependency "activesupport"
-  gem.add_development_dependency "tzinfo"
   gem.add_development_dependency "sass-rails"
 end
