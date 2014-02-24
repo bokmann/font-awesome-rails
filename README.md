@@ -57,8 +57,8 @@ fa_icon "camera-retro"
 fa_icon "camera-retro", text: "Take a photo"
 # => <i class="fa fa-camera-retro"></i> Take a photo
 
-fa_icon "quote-left 4x", class: "muted pull-left"
-# => <i class="fa fa-quote-left fa-4x muted pull-left"></i>
+fa_icon "quote-left 4x", class: "text-muted pull-left"
+# => <i class="fa fa-quote-left fa-4x text-muted pull-left"></i>
 
 content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
 # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
