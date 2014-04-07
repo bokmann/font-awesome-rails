@@ -1,4 +1,4 @@
-# font-awesome-rails [![Gem Version](https://badge.fury.io/rb/font-awesome-rails.svg)](http://badge.fury.io/rb/font-awesome-rails) [![Build Status](https://secure.travis-ci.org/bokmann/font-awesome-rails.svg)](http://travis-ci.org/bokmann/font-awesome-rails)
+# font-awesome-rails [![Gem Version](http://img.shields.io/gem/v/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails) [![Build Status](https://secure.travis-ci.org/bokmann/font-awesome-rails.svg)](http://travis-ci.org/bokmann/font-awesome-rails)
 
 font-awesome-rails provides the
 [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) web fonts and
