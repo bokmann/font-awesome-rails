@@ -57,6 +57,9 @@ fa_icon "camera-retro"
 fa_icon "camera-retro", text: "Take a photo"
 # => <i class="fa fa-camera-retro"></i> Take a photo
 
+fa_icon "chevron-right", text: "Get started", right: true
+# => Get started <i class="fa fa-chevron-right"></i>
+
 fa_icon "quote-left 4x", class: "text-muted pull-left"
 # => <i class="fa fa-quote-left fa-4x text-muted pull-left"></i>
 

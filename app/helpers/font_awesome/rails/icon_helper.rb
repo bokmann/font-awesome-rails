@@ -11,6 +11,8 @@ module FontAwesome
       #
       #   fa_icon "camera-retro", text: "Take a photo"
       #   # => <i class="fa fa-camera-retro"></i> Take a photo
+      #   fa_icon "chevron-right", text: "Get started", right: true
+      #   # => Get started <i class="fa fa-chevron-right"></i>
       #
       #   fa_icon "camera-retro 2x"
       #   # => <i class="fa fa-camera-retro fa-2x"></i>
@@ -32,8 +34,9 @@ module FontAwesome
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
+        right_icon = options.delete(:right)
         icon = content_tag(:i, nil, options.merge(:class => classes))
-        Private.icon_join(icon, text)
+        Private.icon_join(icon, text, right_icon)
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -67,16 +70,19 @@ module FontAwesome
         icons = [base, icon]
         icons.reverse! if options.delete(:reverse)
         text = options.delete(:text)
+        right_icon = options.delete(:right)
         stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
-        Private.icon_join(stacked_icon, text)
+        Private.icon_join(stacked_icon, text, right_icon)
       end
 
       module Private
         extend ActionView::Helpers::OutputSafetyHelper
 
-        def self.icon_join(icon, text)
+        def self.icon_join(icon, text, reverse_order = false)
           return icon if text.blank?
-          safe_join([icon, ERB::Util.html_escape(text)], " ")
+          elements = [icon, ERB::Util.html_escape(text)]
+          elements.reverse! if reverse_order
+          safe_join(elements, " ")
         end
 
         def self.icon_names(names = [])

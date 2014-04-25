@@ -37,6 +37,10 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_icon "#{i("fa fa-camera-retro")} Take a photo", "camera-retro", :text => "Take a photo"
   end
 
+  test "#fa_icon should be able to put the icon on the right" do
+    assert_icon "Submit #{i("fa fa-chevron-right")}", "chevron-right", :text => "Submit", :right => true
+  end
+
   test "#fa_icon should html escape text" do
     assert_icon "#{i("fa fa-camera-retro")} &lt;script&gt;&lt;/script&gt;", "camera-retro", :text => "<script></script>"
   end
@@ -73,6 +77,11 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   test "#fa_stacked_icon should reverse the stack" do
     expected = %(<span class="fa-stack">#{i("fa fa-facebook fa-stack-1x")}#{i("fa fa-ban fa-stack-2x")}</span>)
     assert_stacked_icon expected, "facebook", :base => "ban", :reverse => "true"
+  end
+
+  test "#fa_stacked_icon should be able to put the icon on the right" do
+    expected = %(Go <span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-exclamation fa-stack-1x")}</span>)
+    assert_stacked_icon expected, "exclamation", :text => "Go", :right => true
   end
 
   test "#fa_stacked_icon should html escape text" do
