@@ -4,17 +4,13 @@
  */
 /* FONT PATH
  * -------------------------- */
-//= depend_on_asset "fontawesome-webfont.eot"
-//= depend_on_asset "fontawesome-webfont.woff"
-//= depend_on_asset "fontawesome-webfont.svg"
-//= depend_on_asset "fontawesome-webfont.ttf"
-//= depend_on_asset "fontawesome-webfont.woff"
+
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('<%= font_path('fontawesome-webfont.eot') %>');
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?#iefix') format('embedded-opentype'), url('<%= font_path('fontawesome-webfont.woff') %>') format('woff'), url('<%= font_path('fontawesome-webfont.ttf') %>') format('truetype'), url('<%= font_path('fontawesome-webfont.svg') %>#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'FontAwesome';
+    src: font-url('fontawesome-webfont.eot');
+    src: font-url('fontawesome-webfont.eot?#iefix') format('embedded-opentype'), font-url('fontawesome-webfont.woff') format('woff'), font-url('fontawesome-webfont.ttf') format('truetype'), font-url('fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 .fa {
   display: inline-block;
