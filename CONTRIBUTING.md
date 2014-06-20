@@ -11,7 +11,7 @@ steps will also help us help you diagnose the issue.
 1. Please make sure that no other gem dependencies in your project also include outdated versions of the FontAwesome fonts.
 1. Please make sure the `public/assets` directory is empty (a local asset precompile can fill this directory and override any other assets in development).
 1. You might need to touch your `application.css` asset to make sure it recompiles from a cached copy.
-1. If still having trouble, paste the results of `bundle list | grep  '\(rails\)\|\(awesome\)` (full `bundle list` can sometimes be better)
+1. If still having trouble, paste the results of `bundle list | grep  'rails\|awesome\|sass\|less'` (full `bundle list` can sometimes be better)
 
 ## Want to Contribute?
 
