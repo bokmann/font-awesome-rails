@@ -63,6 +63,9 @@ fa_icon "chevron-right", text: "Get started", right: true
 fa_icon "quote-left 4x", class: "text-muted pull-left"
 # => <i class="fa fa-quote-left fa-4x text-muted pull-left"></i>
 
+fa_icon "quote-left", size: 4, class: "text-muted pull-left"
+# => <i class="fa fa-quote-left fa-4x text-muted pull-left"></i>
+
 content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
 # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
 ```
