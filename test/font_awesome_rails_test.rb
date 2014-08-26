@@ -23,7 +23,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
 
   test "stylesheets contain asset pipeline references to fonts" do
     get "/assets/font-awesome.css"
-    v = FontAwesome::Rails::VERSION.gsub(/\.\d+$/, "")
+    v = FontAwesome::Rails::FA_VERSION
     assert_match "/assets/fontawesome-webfont.eot?v=#{v}",  response.body
     assert_match "/assets/fontawesome-webfont.eot?#iefix&v=#{v}", response.body
     assert_match "/assets/fontawesome-webfont.woff?v=#{v}", response.body
