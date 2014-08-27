@@ -4,6 +4,7 @@ If you think you found a problem, we ask that you first run through these
 debugging steps to make sure your environment is clean. The results of these
 steps will also help us help you diagnose the issue.
 
+1. Try clearing your browser cache (completely) to clear out any cached copies of the underlying font.
 1. **Make sure the icon still exists** [in FontAwesome](http://fontawesome.io/icons/).
 1. Be sure to **restart your development server** after a `bundle update font-awesome-rails` to get the latest version of font-awesome-rails.
 1. If upgrading from Font Awesome 3.x, be sure to rename all your icon classes to match the [new Font Awesome naming convention in v4](http://fortawesome.github.io/Font-Awesome/whats-new/#new-naming) (note: We recommend using our `fa_icon` view helper for this instead).
