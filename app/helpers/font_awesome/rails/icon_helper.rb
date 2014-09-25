@@ -10,9 +10,9 @@ module FontAwesome
       #   # => <i class="fa fa-camera-retro"></i>
       #
       #   fa_icon "camera-retro", text: "Take a photo"
-      #   # => <i class="fa fa-camera-retro"></i> Take a photo
+      #   # => <i class="fa fa-camera-retro"></i> <span class="fa-text fa-text-right">Take a photo</span>
       #   fa_icon "chevron-right", text: "Get started", right: true
-      #   # => Get started <i class="fa fa-chevron-right"></i>
+      #   # => <span class="fa-text fa-text-left">Get started</span> <i class="fa fa-chevron-right"></i>
       #
       #   fa_icon "camera-retro 2x"
       #   # => <i class="fa fa-camera-retro fa-2x"></i>
@@ -28,7 +28,7 @@ module FontAwesome
       #   # => <i class="fa fa-user" data-id="123"></i>
       #
       #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
-      #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
+      #   # => <li><i class="fa fa-check fa-li"></i> <span class="fa-text fa-text-right">Bulleted list item</span></li>
       def fa_icon(names = "flag", options = {})
         classes = ["fa"]
         classes.concat Private.icon_names(names)
@@ -58,7 +58,7 @@ module FontAwesome
       #   # => <span class="fa-stack pull-right">
       #   # =>   <i class="fa fa-square fa-stack-2x"></i>
       #   # =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
-      #   # => </span> Hi!
+      #   # => </span> <span class="fa-text fa-text-right">Hi!</span>
       #
       #   fa_stacked_icon "camera", base: "ban-circle", reverse: true
       #   # => <span class="fa-stack">
