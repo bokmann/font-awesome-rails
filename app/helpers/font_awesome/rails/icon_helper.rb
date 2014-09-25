@@ -36,7 +36,7 @@ module FontAwesome
 
         text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
-        text_tag = text ? content_tag(:span, text, class: "fa-text fa-text-#{text_alignment}") : nil
+        text_tag = text ? content_tag(:span, text, :class => "fa-text fa-text-#{text_alignment}") : nil
 
         right_icon = options.delete(:right)
         icon = content_tag(:i, nil, options.merge(:class => classes))
@@ -76,7 +76,7 @@ module FontAwesome
 
         text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
-        text_tag = text ? content_tag(:span, text, class: "fa-text fa-text-#{text_alignment}") : nil
+        text_tag = text ? content_tag(:span, text, :class => "fa-text fa-text-#{text_alignment}") : nil
 
         right_icon = options.delete(:right)
         stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
