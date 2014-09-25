@@ -90,7 +90,7 @@ module FontAwesome
           return icon if text.blank?
           elements = [icon, ERB::Util.html_escape(text)]
           elements.reverse! if reverse_order
-          safe_join(elements)
+          safe_join(elements, " ")
         end
 
         def self.icon_names(names = [])
