@@ -33,10 +33,14 @@ module FontAwesome
         classes = ["fa"]
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
+
+        text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
+        text_tag = text ? content_tag(:span, text, class: "fa-text fa-text-#{text_alignment}") : nil
+
         right_icon = options.delete(:right)
         icon = content_tag(:i, nil, options.merge(:class => classes))
-        Private.icon_join(icon, text, right_icon)
+        Private.icon_join(icon, text_tag, right_icon)
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -69,10 +73,14 @@ module FontAwesome
         icon = fa_icon(names, options.delete(:icon_options) || {})
         icons = [base, icon]
         icons.reverse! if options.delete(:reverse)
+
+        text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
+        text_tag = text ? content_tag(:span, text, class: "fa-text fa-text-#{text_alignment}") : nil
+
         right_icon = options.delete(:right)
         stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
-        Private.icon_join(stacked_icon, text, right_icon)
+        Private.icon_join(stacked_icon, text_tag, right_icon)
       end
 
       module Private
@@ -82,7 +90,7 @@ module FontAwesome
           return icon if text.blank?
           elements = [icon, ERB::Util.html_escape(text)]
           elements.reverse! if reverse_order
-          safe_join(elements, " ")
+          safe_join(elements)
         end
 
         def self.icon_names(names = [])

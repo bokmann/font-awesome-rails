@@ -34,23 +34,33 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   end
 
   test "#fa_icon should incorporate a text suffix" do
-    assert_icon "#{i("fa fa-camera-retro")} Take a photo", "camera-retro", :text => "Take a photo"
+    icon = i("fa fa-camera-retro")
+    icon_text = text("Take a photo", "fa-text fa-text-right")
+    assert_icon "#{icon}#{icon_text}", "camera-retro", :text => "Take a photo"
   end
 
   test "#fa_icon should be able to put the icon on the right" do
-    assert_icon "Submit #{i("fa fa-chevron-right")}", "chevron-right", :text => "Submit", :right => true
+    icon = i("fa fa-chevron-right")
+    icon_text = text("Submit", "fa-text fa-text-left")
+    assert_icon "#{icon_text}#{icon}", "chevron-right", :text => "Submit", :right => true
   end
 
   test "#fa_icon should html escape text" do
-    assert_icon "#{i("fa fa-camera-retro")} &lt;script&gt;&lt;/script&gt;", "camera-retro", :text => "<script></script>"
+    icon = i("fa fa-camera-retro")
+    icon_text = text("&lt;script&gt;&lt;/script&gt;", "fa-text fa-text-right")
+    assert_icon "#{icon}#{icon_text}", "camera-retro", :text => "<script></script>"
   end
 
   test "#fa_icon should not html escape safe text" do
-    assert_icon "#{i("fa fa-camera-retro")} <script></script>", "camera-retro", :text => "<script></script>".html_safe
+    icon = i("fa fa-camera-retro")
+    icon_text = text("<script></script>", "fa-text fa-text-right")
+    assert_icon "#{icon}#{icon_text}", "camera-retro", :text => "<script></script>".html_safe
   end
 
   test "#fa_icon should pull it all together" do
-    assert_icon "#{i("fa fa-camera-retro pull-right")} Take a photo", "camera-retro", :text => "Take a photo", :class => "pull-right"
+    icon = i("fa fa-camera-retro pull-right")
+    icon_text = text("Take a photo", "fa-text fa-text-right")
+    assert_icon "#{icon}#{icon_text}", "camera-retro", :text => "Take a photo", :class => "pull-right"
   end
 
   test "#fa_icon should pass all other options through" do
@@ -80,17 +90,20 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   end
 
   test "#fa_stacked_icon should be able to put the icon on the right" do
-    expected = %(Go <span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-exclamation fa-stack-1x")}</span>)
+    icon_text = text("Go", "fa-text fa-text-left")
+    expected = %(#{icon_text}<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-exclamation fa-stack-1x")}</span>)
     assert_stacked_icon expected, "exclamation", :text => "Go", :right => true
   end
 
   test "#fa_stacked_icon should html escape text" do
-    expected = %(<span class="fa-stack">#{i("fa fa-check-empty fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span> &lt;script&gt;)
+    icon_text = text("&lt;script&gt;", "fa-text fa-text-right")
+    expected = %(<span class="fa-stack">#{i("fa fa-check-empty fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span>#{icon_text})
     assert_stacked_icon expected, "twitter", :base => "check-empty", :text => "<script>"
   end
 
   test "#fa_stacked_icon should not html escape safe text" do
-    expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span> <script>)
+    icon_text = text("<script>", "fa-text fa-text-right")
+    expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span>#{icon_text})
     assert_stacked_icon expected, "twitter", :base => "square-o", :text => "<script>".html_safe
   end
 
@@ -118,5 +131,9 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   def i(classes)
     %(<i class="#{classes}"></i>)
+  end
+
+  def text(text, classes)
+    %(<span class="#{classes}">#{text}</span>)
   end
 end
