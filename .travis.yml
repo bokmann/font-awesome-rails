@@ -7,7 +7,8 @@ rvm:
 gemfile:
   - Gemfile
   - gemfiles/rails-3.2.gemfile
-  - gemfiles/rails-4.0.gemfile
+  - gemfiles/rails-4.1.gemfile
+  - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-master.gemfile
 matrix:
   include:
