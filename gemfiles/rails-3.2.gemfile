@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
 gemspec :path => "../"
-gem "railties", :github => "rails/rails", :branch => "3-2-stable"
-gem "sass-rails", :github => "rails/sass-rails", :branch => "3-2-stable"
+gem "railties", "~> 3.2.21"
+gem "sass-rails", "~> 3.2.6"
 gem "tzinfo"
