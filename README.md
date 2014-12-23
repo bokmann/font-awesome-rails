@@ -48,7 +48,7 @@ add this to your `application.css.sass` file:
 ### Helpers
 
 There are also some helpers (`fa_icon` and `fa_stacked_icon`) that make your
-views _icontastic!_.
+views _icontastic!_
 
 ```ruby
 fa_icon "camera-retro"
