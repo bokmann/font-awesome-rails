@@ -4,14 +4,15 @@ If you think you found a problem, we ask that you first run through these
 debugging steps to make sure your environment is clean. The results of these
 steps will also help us help you diagnose the issue.
 
-1. Try clearing your browser cache (completely) to clear out any cached copies of the underlying font.
-1. **Make sure the icon still exists** [in FontAwesome](http://fontawesome.io/icons/).
 1. Be sure to **restart your development server** after a `bundle update font-awesome-rails` to get the latest version of font-awesome-rails.
-1. If upgrading from Font Awesome 3.x, be sure to rename all your icon classes to match the [new Font Awesome naming convention in v4](http://fortawesome.github.io/Font-Awesome/whats-new/#new-naming) (note: We recommend using our `fa_icon` view helper for this instead).
+1. **Make sure the icon still exists** [in FontAwesome](http://fontawesome.io/icons/) (sometimes icons are renamed between versions).
+1. Please make sure the `public/assets` directory is empty (a local asset precompile can fill this directory and override any other assets in development).
+1. Make sure Rails isn't picking up a cached asset pipelin resource (`rm -rf tmp/cache`).
+1. Try clearing your browser cache (completely) to clear out any cached copies of the underlying font.
+1. You might need to touch your `application.css` asset to make sure it recompiles from a cached copy.
 1. If using the `fa_icon` helper and you are having trouble in your production environment, **make sure the gem is listed outside of your assets group** in your Gemfile.
 1. Please make sure that **no other gem dependencies in your project also include outdated versions** of the FontAwesome fonts.
-1. Please make sure the `public/assets` directory is empty (a local asset precompile can fill this directory and override any other assets in development).
-1. You might need to touch your `application.css` asset to make sure it recompiles from a cached copy.
+1. If upgrading from Font Awesome 3.x, be sure to rename all your icon classes to match the [new Font Awesome naming convention in v4](http://fortawesome.github.io/Font-Awesome/whats-new/#new-naming) (note: We recommend using our `fa_icon` view helper for this instead).
 1. If still having trouble, paste the results of `bundle list | grep  'rails\|awesome\|sass\|less'` (full `bundle list` can sometimes be better)
 
 **Trouble with Rails 4?** Please see [Issue #88](https://github.com/bokmann/font-awesome-rails/issues/88) and [@radar's investigation](https://github.com/bokmann/font-awesome-rails/issues/88#issuecomment-47048968) to see if your app is missing a proper `require 'sass/rails'` somewhere.
