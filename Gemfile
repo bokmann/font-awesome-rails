@@ -5,5 +5,5 @@ gemspec
 
 group :development do
   gem "guard"
-  gem "guard-test"
+  gem "guard-minitest"
 end

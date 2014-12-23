@@ -10,9 +10,9 @@ module FontAwesome
       #   # => <i class="fa fa-camera-retro"></i>
       #
       #   fa_icon "camera-retro", text: "Take a photo"
-      #   # => <i class="fa fa-camera-retro"></i> Take a photo
+      #   # => <i class="fa fa-camera-retro"></i> <span class="fa-text fa-text-right">Take a photo</span>
       #   fa_icon "chevron-right", text: "Get started", right: true
-      #   # => Get started <i class="fa fa-chevron-right"></i>
+      #   # => <span class="fa-text fa-text-left">Get started</span> <i class="fa fa-chevron-right"></i>
       #
       #   fa_icon "camera-retro 2x"
       #   # => <i class="fa fa-camera-retro fa-2x"></i>
@@ -28,15 +28,19 @@ module FontAwesome
       #   # => <i class="fa fa-user" data-id="123"></i>
       #
       #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
-      #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
+      #   # => <li><i class="fa fa-check fa-li"></i> <span class="fa-text fa-text-right">Bulleted list item</span></li>
       def fa_icon(names = "flag", options = {})
         classes = ["fa"]
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
+
+        text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
+        text_tag = text ? content_tag(:span, text, :class => "fa-text fa-text-#{text_alignment}") : nil
+
         right_icon = options.delete(:right)
         icon = content_tag(:i, nil, options.merge(:class => classes))
-        Private.icon_join(icon, text, right_icon)
+        Private.icon_join(icon, text_tag, right_icon)
       end
 
       # Creates an stack set of icon tags given a base icon name, a main icon
@@ -54,7 +58,7 @@ module FontAwesome
       #   # => <span class="fa-stack pull-right">
       #   # =>   <i class="fa fa-square fa-stack-2x"></i>
       #   # =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
-      #   # => </span> Hi!
+      #   # => </span> <span class="fa-text fa-text-right">Hi!</span>
       #
       #   fa_stacked_icon "camera", base: "ban-circle", reverse: true
       #   # => <span class="fa-stack">
@@ -69,10 +73,14 @@ module FontAwesome
         icon = fa_icon(names, options.delete(:icon_options) || {})
         icons = [base, icon]
         icons.reverse! if options.delete(:reverse)
+
+        text_alignment = options[:right] ? "left" : "right"
         text = options.delete(:text)
+        text_tag = text ? content_tag(:span, text, :class => "fa-text fa-text-#{text_alignment}") : nil
+
         right_icon = options.delete(:right)
         stacked_icon = content_tag(:span, safe_join(icons), options.merge(:class => classes))
-        Private.icon_join(stacked_icon, text, right_icon)
+        Private.icon_join(stacked_icon, text_tag, right_icon)
       end
 
       module Private
