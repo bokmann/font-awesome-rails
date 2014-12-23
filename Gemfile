@@ -4,6 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem "guard"
+  gem "guard", ">= 2.9"
   gem "guard-minitest"
 end
