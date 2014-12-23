@@ -14,5 +14,6 @@ module Dummy
     # replacement for environments/*.rb
     config.active_support.deprecation = :stderr
     config.eager_load = false
+    config.active_support.test_order = :random rescue nil
   end
 end
