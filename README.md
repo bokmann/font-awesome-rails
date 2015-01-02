@@ -82,6 +82,17 @@ fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "
 
 ```
 
+
+
+```ruby
+fa_icon "spinner"
+# => <i class="fa fa-spin fa-spinner"></i>
+    
+fa_icon "spinner", text: "Turning"
+# => <i class="fa fa-spin fa-spinner"></i> Turning
+```
+
+
 **Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
 so that these helpers are automatically loaded in production environments.
 
