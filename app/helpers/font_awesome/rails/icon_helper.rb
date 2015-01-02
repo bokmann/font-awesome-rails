@@ -39,6 +39,30 @@ module FontAwesome
         Private.icon_join(icon, text, right_icon)
       end
 
+
+
+      # Creates an icon tag given an icon name and possible icon
+      # modifiers.
+      #
+      # Examples
+      #
+      #   fa_icon "spinner"
+      #   # => <i class="fa fa-spin fa-spinner"></i>
+      #
+      #   fa_icon "spinner", text: "Turning"
+      #   # => <i class="fa fa-spin fa-spinner"></i> Turning
+      #
+      def fa_spin_icon(names = "flag", options = {})
+        classes = ["fa fa-spin"]
+        classes.concat Private.icon_names(names)
+        classes.concat Array(options.delete(:class))
+        text = options.delete(:text)
+        right_icon = options.delete(:right)
+        icon = content_tag(:i, nil, options.merge(:class => classes))
+        Private.icon_join(icon, text, right_icon)
+      end
+
+      
       # Creates an stack set of icon tags given a base icon name, a main icon
       # name, and possible icon modifiers.
       #
