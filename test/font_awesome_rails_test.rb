@@ -10,9 +10,13 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
   test "fonts are served" do
     get "/assets/fontawesome-webfont.eot"
     assert_response :success
-    get "/assets/fontawesome-webfont.ttf"
+    get "/assets/fontawesome-webfont.woff2"
     assert_response :success
     get "/assets/fontawesome-webfont.woff"
+    assert_response :success
+    get "/assets/fontawesome-webfont.ttf"
+    assert_response :success
+    get "/assets/fontawesome-webfont.svg"
     assert_response :success
   end
 
@@ -26,6 +30,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
     v = FontAwesome::Rails::FA_VERSION
     assert_match "/assets/fontawesome-webfont.eot?v=#{v}",  response.body
     assert_match "/assets/fontawesome-webfont.eot?#iefix&v=#{v}", response.body
+    assert_match "/assets/fontawesome-webfont.woff2?v=#{v}", response.body
     assert_match "/assets/fontawesome-webfont.woff?v=#{v}", response.body
     assert_match "/assets/fontawesome-webfont.ttf?v=#{v}",  response.body
     assert_match "/assets/fontawesome-webfont.svg?v=#{v}#fontawesomeregular", response.body

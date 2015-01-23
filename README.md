@@ -114,6 +114,7 @@ so that these helpers are automatically loaded in production environments.
     | 4.0.3.2 | 0373b63          | icon right alignment support in helpers                                   |
     | 4.1.0.0 | 2649d91          | 4.1.0 release (new icons)                                                 |
     | 4.2.0.0 | a65bd93          | 4.2.0 release (new icons)                                                 |
+    | 4.3.0.0 | 41b9ed0          | 4.3.0 release (new icons)                                                 |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
