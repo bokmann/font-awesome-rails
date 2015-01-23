@@ -19,4 +19,6 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "activesupport"
   gem.add_development_dependency "sass-rails"
+
+  gem.required_ruby_version = '>= 1.9.3'
 end

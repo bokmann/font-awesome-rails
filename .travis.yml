@@ -9,9 +9,6 @@ gemfile:
   - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-master.gemfile
 matrix:
-  include:
-    - rvm: 1.8.7
-      gemfile: gemfiles/rails-3.2.gemfile
   allow_failures:
     - gemfile: gemfiles/rails-master.gemfile
   fast_finish: true
