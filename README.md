@@ -74,6 +74,12 @@ fa_stacked_icon "twitter", base: "square-o"
 # =>   <i class="fa fa-twitter fa-stack-1x"></i>
 # => </span>
 
+fa_stacked_icon "dollar inverse", base: "circle", class: "fa-5x"
+# => <span class="fa-stack fa-5x">
+# =>   <i class="fa fa-circle fa-stack-2x"></i>
+# =>   <i class="fa fa-dollar fa-inverse fa-stack-1x"></i>
+# => </span>
+
 fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
 # => <span class="fa-stack pull-right">
 # =>   <i class="fa fa-square fa-stack-2x"></i>
