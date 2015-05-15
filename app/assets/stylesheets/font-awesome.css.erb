@@ -12,8 +12,14 @@
 <% v = FontAwesome::Rails::FA_VERSION %>
 @font-face {
   font-family: 'FontAwesome';
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?v=<%= v %>');
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?#iefix&v=<%= v %>') format('embedded-opentype'), url('<%= font_path('fontawesome-webfont.woff2') %>?v=<%= v %>') format('woff2'), url('<%= font_path('fontawesome-webfont.woff') %>?v=<%= v %>') format('woff'), url('<%= font_path('fontawesome-webfont.ttf') %>?v=<%= v %>') format('truetype'), url('<%= font_path('fontawesome-webfont.svg') %>?v=<%= v %>#fontawesomeregular') format('svg');
+  /* shamelessly stolen from: https://github.com/Outcome-Engenuity/font-awesome-rails-base64 */
+  /* data:image/svg+xml;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.svg'].source) %>) format('svg')*/
+  src: url('data:application/octet-stream;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.eot'].source) %>');
+  src: url('data:application/octet-stream;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.eot'].source) %>') format('embedded-opentype'),
+       url('data:application/octet-stream;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.woff2'].source) %>') format('woff2'),
+       url('data:application/font-woff;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.woff') %>?v=<%= v %>') format('woff'),
+       url('data:application/x-font-ttf;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.ttf') %>?v=<%= v %>') format('truetype'),
+       url('data:image/svg+xml;charset=utf-8;base64, <%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.svg') %>?v=<%= v %>#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
