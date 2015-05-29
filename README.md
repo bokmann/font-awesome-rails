@@ -121,6 +121,12 @@ set the config option `action_controller.relative_url_root`:
 The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`,
 so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
 
+## Versioning
+
+Versioning follows the core releases of Font-Awesome which follows Semantic
+Versioning 2.0 as defined at <http://semver.org>. We will do our best not to
+make any breaking changes until Font-Awesome core makes a major version bump.
+
 ## License
 
 * The [Font Awesome](http://fortawesome.github.com/Font-Awesome) font is
