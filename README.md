@@ -90,10 +90,15 @@ fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "
 
 ## Misc
 
-**Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
-so that these helpers are automatically loaded in production environments.
+### Rails engines
 
-**Note when deploying to sub-folders**
+When building a Rails engine that includes font-awesome-rails as a dependency,
+be sure to `require "font-awesome-rails"` somewhere during the intialization of
+your engine. Otherwise, Rails will not automatically pick up the load path of
+the font-awesome-rails assets and helpers ([source 1](https://github.com/bokmann/font-awesome-rails/issues/130#issuecomment-95308175), [source 2](https://bibwild.wordpress.com/2013/02/27/gem-depends-on-rails-engine-gem-gotcha-need-explicit-require/), [source 3](http://stackoverflow.com/questions/5159607/rails-engine-gems-dependencies-how-to-load-them-into-the-application/5850503#5850503)).
+
+### Deploying to sub-folders
+
 It is sometimes the case that deploying a Rails application to a production
 environment requires the application to be hosted at a sub-folder on the server.
 This may be the case, for example, if Apache HTTPD or Nginx is being used as a
@@ -120,6 +125,11 @@ set the config option `action_controller.relative_url_root`:
 
 The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`,
 so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
+
+### Rails 3.2
+
+**Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
+so that these helpers are automatically loaded in production environments.
 
 ## Versioning
 
