@@ -3,104 +3,104 @@ require 'test_helper'
 class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
 
   test "#fa_icon with no args should render a flag icon" do
-    assert_icon i("fa fa-flag")
+    assert_icon span("fa fa-flag")
   end
 
   test "#fa_icon should render different individual icons" do
-    assert_icon i("fa fa-flag"),         "flag"
-    assert_icon i("fa fa-camera-retro"), "camera-retro"
-    assert_icon i("fa fa-cog"),          "cog"
-    assert_icon i("fa fa-github"),       "github"
+    assert_icon span("fa fa-flag"),         "flag"
+    assert_icon span("fa fa-camera-retro"), "camera-retro"
+    assert_icon span("fa fa-cog"),          "cog"
+    assert_icon span("fa fa-github"),       "github"
   end
 
   test "#fa_icon should render icons with multiple modifiers" do
-    assert_icon i("fa fa-pencil fa-fixed-width"), "pencil fixed-width"
-    assert_icon i("fa fa-flag fa-4x"),            "flag 4x"
-    assert_icon i("fa fa-refresh fa-2x fa-spin"), "refresh 2x spin"
+    assert_icon span("fa fa-pencil fa-fixed-width"), "pencil fixed-width"
+    assert_icon span("fa fa-flag fa-4x"),            "flag 4x"
+    assert_icon span("fa fa-refresh fa-2x fa-spin"), "refresh 2x spin"
   end
 
   test "#fa_icon should render icons with array modifiers" do
-    assert_icon i("fa fa-flag"),                  ["flag"]
-    assert_icon i("fa fa-check fa-li"),           ["check", "li"]
-    assert_icon i("fa fa-flag fa-4x"),            ["flag", "4x"]
-    assert_icon i("fa fa-refresh fa-2x fa-spin"), ["refresh", "2x", "spin"]
+    assert_icon span("fa fa-flag"),                  ["flag"]
+    assert_icon span("fa fa-check fa-li"),           ["check", "li"]
+    assert_icon span("fa fa-flag fa-4x"),            ["flag", "4x"]
+    assert_icon span("fa fa-refresh fa-2x fa-spin"), ["refresh", "2x", "spin"]
   end
 
   test "#fa_icon should incorporate additional class styles" do
-    assert_icon i("fa fa-flag pull-right"),                "flag",         :class => "pull-right"
-    assert_icon i("fa fa-flag fa-2x pull-right"),          ["flag", "2x"], :class => ["pull-right"]
-    assert_icon i("fa fa-check fa-li pull-right special"), "check li",     :class => "pull-right special"
-    assert_icon i("fa fa-check pull-right special"),       "check",        :class => ["pull-right", "special"]
+    assert_icon span("fa fa-flag pull-right"),                "flag",         :class => "pull-right"
+    assert_icon span("fa fa-flag fa-2x pull-right"),          ["flag", "2x"], :class => ["pull-right"]
+    assert_icon span("fa fa-check fa-li pull-right special"), "check li",     :class => "pull-right special"
+    assert_icon span("fa fa-check pull-right special"),       "check",        :class => ["pull-right", "special"]
   end
 
   test "#fa_icon should incorporate a text suffix" do
-    assert_icon "#{i("fa fa-camera-retro")} Take a photo", "camera-retro", :text => "Take a photo"
+    assert_icon "#{span("fa fa-camera-retro")} Take a photo", "camera-retro", :text => "Take a photo"
   end
 
   test "#fa_icon should be able to put the icon on the right" do
-    assert_icon "Submit #{i("fa fa-chevron-right")}", "chevron-right", :text => "Submit", :right => true
+    assert_icon "Submit #{span("fa fa-chevron-right")}", "chevron-right", :text => "Submit", :right => true
   end
 
   test "#fa_icon should html escape text" do
-    assert_icon "#{i("fa fa-camera-retro")} &lt;script&gt;&lt;/script&gt;", "camera-retro", :text => "<script></script>"
+    assert_icon "#{span("fa fa-camera-retro")} &lt;script&gt;&lt;/script&gt;", "camera-retro", :text => "<script></script>"
   end
 
   test "#fa_icon should not html escape safe text" do
-    assert_icon "#{i("fa fa-camera-retro")} <script></script>", "camera-retro", :text => "<script></script>".html_safe
+    assert_icon "#{span("fa fa-camera-retro")} <script></script>", "camera-retro", :text => "<script></script>".html_safe
   end
 
   test "#fa_icon should pull it all together" do
-    assert_icon "#{i("fa fa-camera-retro pull-right")} Take a photo", "camera-retro", :text => "Take a photo", :class => "pull-right"
+    assert_icon "#{span("fa fa-camera-retro pull-right")} Take a photo", "camera-retro", :text => "Take a photo", :class => "pull-right"
   end
 
   test "#fa_icon should pass all other options through" do
-    assert_icon %(<i class="fa fa-user" data-id="123"></i>), "user", :data => { :id => 123 }
+    assert_icon %(<span class="fa fa-user" data-id="123"></span>), "user", :data => { :id => 123 }
   end
 
   test "#fa_stacked_icon with no args should render a flag icon" do
-    expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-flag fa-stack-1x")}</span>)
+    expected = %(<span class="fa-stack">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-flag fa-stack-1x")}</span>)
     assert_stacked_icon expected
   end
 
   test "#fa_stacked_icon should render a stacked icon" do
-    expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span>)
+    expected = %(<span class="fa-stack">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-twitter fa-stack-1x")}</span>)
     assert_stacked_icon expected, "twitter", :base => "square-o"
-    expected = %(<span class="fa-stack">#{i("fa fa-square fa-stack-2x")}#{i("fa fa-terminal fa-inverse fa-stack-1x")}</span>)
+    expected = %(<span class="fa-stack">#{span("fa fa-square fa-stack-2x")}#{span("fa fa-terminal fa-inverse fa-stack-1x")}</span>)
     assert_stacked_icon expected, ["terminal", "inverse"], :base => ["square"]
   end
 
   test "#fa_stacked_icon should incorporate additional class styles" do
-    expected = %(<span class="fa-stack pull-right">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span>)
+    expected = %(<span class="fa-stack pull-right">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-twitter fa-stack-1x")}</span>)
     assert_stacked_icon expected, "twitter", :base => "square-o", :class => "pull-right"
   end
 
   test "#fa_stacked_icon should reverse the stack" do
-    expected = %(<span class="fa-stack">#{i("fa fa-facebook fa-stack-1x")}#{i("fa fa-ban fa-stack-2x")}</span>)
+    expected = %(<span class="fa-stack">#{span("fa fa-facebook fa-stack-1x")}#{span("fa fa-ban fa-stack-2x")}</span>)
     assert_stacked_icon expected, "facebook", :base => "ban", :reverse => "true"
   end
 
   test "#fa_stacked_icon should be able to put the icon on the right" do
-    expected = %(Go <span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-exclamation fa-stack-1x")}</span>)
+    expected = %(Go <span class="fa-stack">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-exclamation fa-stack-1x")}</span>)
     assert_stacked_icon expected, "exclamation", :text => "Go", :right => true
   end
 
   test "#fa_stacked_icon should html escape text" do
-    expected = %(<span class="fa-stack">#{i("fa fa-check-empty fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span> &lt;script&gt;)
+    expected = %(<span class="fa-stack">#{span("fa fa-check-empty fa-stack-2x")}#{span("fa fa-twitter fa-stack-1x")}</span> &lt;script&gt;)
     assert_stacked_icon expected, "twitter", :base => "check-empty", :text => "<script>"
   end
 
   test "#fa_stacked_icon should not html escape safe text" do
-    expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-twitter fa-stack-1x")}</span> <script>)
+    expected = %(<span class="fa-stack">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-twitter fa-stack-1x")}</span> <script>)
     assert_stacked_icon expected, "twitter", :base => "square-o", :text => "<script>".html_safe
   end
 
   test "#fa_stacked_icon should accept options for base and main icons" do
-    expected = %(<span class="fa-stack">#{i("fa fa-camera fa-stack-1x text-info")}#{i("fa fa-ban fa-stack-2x text-error")}</span>)
+    expected = %(<span class="fa-stack">#{span("fa fa-camera fa-stack-1x text-info")}#{span("fa fa-ban fa-stack-2x text-error")}</span>)
     assert_stacked_icon expected, "camera", :base => "ban", :reverse => true, :base_options => { :class => "text-error" }, :icon_options => { :class => "text-info" }
   end
 
   test "#fa_stacked_icon should pass all other options through" do
-    expected = %(<span class="fa-stack" data-id="123">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-user fa-stack-1x")}</span>)
+    expected = %(<span class="fa-stack" data-id="123">#{span("fa fa-square-o fa-stack-2x")}#{span("fa fa-user fa-stack-1x")}</span>)
     assert_stacked_icon expected, "user", :base => "square-o", :data => { :id => 123 }
   end
 
@@ -116,7 +116,7 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_dom_equal expected, fa_stacked_icon(*args), message
   end
 
-  def i(classes)
-    %(<i class="#{classes}"></i>)
+  def span(classes)
+    %(<span class="#{classes}"></span>)
   end
 end

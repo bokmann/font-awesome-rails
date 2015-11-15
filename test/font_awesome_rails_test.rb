@@ -54,7 +54,7 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
   test "helpers should be available in the view" do
     get "/icons"
     assert_response :success
-    assert_select "i.fa.fa-flag"
+    assert_select "span.fa.fa-flag"
     assert_select "span.fa-stack"
   end
 
