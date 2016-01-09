@@ -9,6 +9,7 @@ gemfile:
   - Gemfile
   - gemfiles/rails-4.1.gemfile
   - gemfiles/rails-4.2.gemfile
+  - gemfiles/rails-master.gemfile
 matrix:
   include:
     - rvm: 2.1.8
