@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/wwidea/font-awesome-rails"
   gem.licenses      = ["MIT", "SIL Open Font License"]
 
-  gem.files         = Dir["{app,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
-  gem.test_files    = Dir["test/**/*"]
+  gem.files         = `git ls-files -- {app,bin,lib,test,spec}/* {LICENSE*,Rakefile,README*}`.split("\n")
+  gem.test_files    = `git ls-files -- {test,spec}/*`.split("\n")
   gem.name          = "font-awesome-rails"
   gem.require_paths = ["lib"]
   gem.version       = FontAwesome::Rails::VERSION

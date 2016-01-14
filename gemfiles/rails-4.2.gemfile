@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gemspec :path => "../"
+gemspec path: "../"
 gem "railties", "~> 4.2.0"
 gem "sass-rails", "~> 5.0.0"
