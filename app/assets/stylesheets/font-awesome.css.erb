@@ -13,12 +13,12 @@
 @font-face {
   /* shamelessly stolen from: https://github.com/Outcome-Engenuity/font-awesome-rails-base64 */
   font-family: 'FontAwesome';
-  src: url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.eot'].source) %>);
-  src: url(data:application/vnd.ms-fontobject;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.eot'].source) %>) format('embedded-opentype'),
-       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.woff2'].source) %>) format('woff2'),
-       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.woff'].source) %>) format('woff'),
-       url(data:application/x-font-ttf;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.ttf'].source) %>) format('truetype'),
-       url(data:image/svg+xml;charset=utf-8;base64,<%= Base64.strict_encode64(Rails.application.assets['fontawesome-webfont.svg'].source) %>) format('svg');
+  src: url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.eot'), 'rb').to_s) %>);
+  src: url(data:application/vnd.ms-fontobject;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.eot'), 'rb').to_s) %>) format('embedded-opentype'),
+       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.woff2'), 'rb').to_s) %>) format('woff2'),
+       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.woff'), 'rb').to_s) %>) format('woff'),
+       url(data:application/x-font-ttf;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.ttf'), 'rb').to_s) %>) format('truetype'),
+       url(data:image/svg+xml;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.svg'), 'rb').to_s) %>) format('svg');
   font-weight: normal;
   font-style: normal;
 }
