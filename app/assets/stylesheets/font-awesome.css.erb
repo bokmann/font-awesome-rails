@@ -11,9 +11,14 @@
 //= depend_on_asset "fontawesome-webfont.svg"
 <% v = FontAwesome::Rails::FA_VERSION %>
 @font-face {
+  /* shamelessly stolen from: https://github.com/Outcome-Engenuity/font-awesome-rails-base64 */
   font-family: 'FontAwesome';
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?v=<%= v %>');
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?#iefix&v=<%= v %>') format('embedded-opentype'), url('<%= font_path('fontawesome-webfont.woff2') %>?v=<%= v %>') format('woff2'), url('<%= font_path('fontawesome-webfont.woff') %>?v=<%= v %>') format('woff'), url('<%= font_path('fontawesome-webfont.ttf') %>?v=<%= v %>') format('truetype'), url('<%= font_path('fontawesome-webfont.svg') %>?v=<%= v %>#fontawesomeregular') format('svg');
+  src: url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.eot'), 'rb').to_s) %>);
+  src: url(data:application/vnd.ms-fontobject;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.eot'), 'rb').to_s) %>) format('embedded-opentype'),
+       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.woff2'), 'rb').to_s) %>) format('woff2'),
+       url(data:application/octet-stream;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.woff'), 'rb').to_s) %>) format('woff'),
+       url(data:application/x-font-ttf;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.ttf'), 'rb').to_s) %>) format('truetype'),
+       url(data:image/svg+xml;charset=utf-8;base64,<%= Base64.strict_encode64(File.open(File.join(File.dirname(File.expand_path(__FILE__)), '/../fonts/fontawesome-webfont.svg'), 'rb').to_s) %>) format('svg');
   font-weight: normal;
   font-style: normal;
 }
