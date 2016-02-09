@@ -17,6 +17,4 @@ matrix:
   exclude:
     - rvm: 2.1.8
       gemfile: gemfiles/rails-master.gemfile
-  allow_failures:
-    - gemfile: gemfiles/rails-master.gemfile
   fast_finish: true
