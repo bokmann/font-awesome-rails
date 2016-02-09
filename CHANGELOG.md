@@ -32,6 +32,7 @@ See [GitHub Releases](https://github.com/bokmann/font-awesome-rails/releases)
     | 4.3.0.0 | 41b9ed0          | 4.3.0 release (new icons)                                                 |
     | 4.4.0.0 | e554555          | 4.4.0 release (new icons)                                                 |
     | 4.5.0.0 | dbc8d1b          | 4.5.0 release (new icons)                                                 |
+    | 4.5.0.1 | dbc8d1b          | added official Rails 5 support                                            |
 
 **note on version 0.2.0**: FontAwesome now includes scss and sass files, but
 when I used them instead of the plain ol css file included in the project, it
