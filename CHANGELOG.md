@@ -4,6 +4,7 @@ See [GitHub Releases](https://github.com/bokmann/font-awesome-rails/releases)
 
 | Version | FontAwesome SHA1 | Notes / Other additions                                            |
 |---------|------------------|--------------------------------------------------------------------|
+| 4.6.3.0 | `8e241f2` | [4.6.3 release](https://github.com/FortAwesome/Font-Awesome/pull/9189) (new brand icons)        |
 | 4.6.2.0 | `e7cc59d` | [4.6.2 release](https://github.com/FortAwesome/Font-Awesome/pull/9117) (fixes and new icons)    |
 | 4.6.1.0 | `6535013` | [4.6.1 release](https://github.com/FortAwesome/Font-Awesome/pull/8962) (minor stylesheet fixes) |
 | 4.6.0.0 | `5697be9` | 4.6.0 release (new icons)                                                 |
