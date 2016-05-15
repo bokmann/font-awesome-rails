@@ -2,5 +2,4 @@ source 'https://rubygems.org'
 
 gemspec path: "../"
 gem "railties", github: "rails/rails", branch: "master"
-gem "sprockets", "< 4.0"
-gem "sass-rails", "< 6.0"
+gem "sass-rails", github: "rails/sass-rails", branch: "master"
