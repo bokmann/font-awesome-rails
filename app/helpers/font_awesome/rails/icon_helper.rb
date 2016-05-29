@@ -31,6 +31,7 @@ module FontAwesome
       #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
         classes = ["fa"]
+        classes.concat ["fa-#{options.delete(:size)}x"] if options[:size].present?
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
