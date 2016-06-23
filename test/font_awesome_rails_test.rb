@@ -27,13 +27,12 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
 
   test "stylesheets contain asset pipeline references to fonts" do
     get "/assets/font-awesome.css"
-    v = FontAwesome::Rails::FA_VERSION
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.eot\?v=#{v}},  response.body
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.eot\?#iefix&v=#{v}}, response.body
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.woff2\?v=#{v}}, response.body
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.woff\?v=#{v}}, response.body
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.ttf\?v=#{v}},  response.body
-    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.svg\?v=#{v}#fontawesomeregular}, response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.eot},  response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.eot\?#iefix}, response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.woff2}, response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.woff}, response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.ttf},  response.body
+    assert_match %r{/assets/fontawesome-webfont(-\w+)?\.svg#fontawesomeregular}, response.body
   end
 
   test "stylesheet is available in a css sprockets require" do
