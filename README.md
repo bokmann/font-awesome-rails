@@ -56,38 +56,38 @@ views _icontastic!_
 
 ```ruby
 fa_icon "camera-retro"
-# => <i class="fa fa-camera-retro"></i>
+# => <span class="fa fa-camera-retro"></span>
 
 fa_icon "camera-retro", text: "Take a photo"
-# => <i class="fa fa-camera-retro"></i> Take a photo
+# => <span class="fa fa-camera-retro"></span> Take a photo
 
 fa_icon "chevron-right", text: "Get started", right: true
-# => Get started <i class="fa fa-chevron-right"></i>
+# => Get started <span class="fa fa-chevron-right"></span>
 
 fa_icon "quote-left 4x", class: "text-muted pull-left"
-# => <i class="fa fa-quote-left fa-4x text-muted pull-left"></i>
+# => <span class="fa fa-quote-left fa-4x text-muted pull-left"></span>
 
 content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
-# => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
+# => <li><span class="fa fa-check fa-li"></span> Bulleted list item</li>
 ```
 
 ```ruby
 fa_stacked_icon "twitter", base: "square-o"
 # => <span class="fa-stack">
-# =>   <i class="fa fa-square-o fa-stack-2x"></i>
-# =>   <i class="fa fa-twitter fa-stack-1x"></i>
+# =>   <span class="fa fa-square-o fa-stack-2x"></span>
+# =>   <span class="fa fa-twitter fa-stack-1x"></span>
 # => </span>
 
 fa_stacked_icon "dollar inverse", base: "circle", class: "fa-5x"
 # => <span class="fa-stack fa-5x">
-# =>   <i class="fa fa-circle fa-stack-2x"></i>
-# =>   <i class="fa fa-dollar fa-inverse fa-stack-1x"></i>
+# =>   <span class="fa fa-circle fa-stack-2x"></span>
+# =>   <span class="fa fa-dollar fa-inverse fa-stack-1x"></span>
 # => </span>
 
 fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
 # => <span class="fa-stack pull-right">
-# =>   <i class="fa fa-square fa-stack-2x"></i>
-# =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
+# =>   <span class="fa fa-square fa-stack-2x"></span>
+# =>   <span class="fa fa-terminal fa-inverse fa-stack-1x"></span>
 # => </span> Hi!
 
 ```

@@ -7,35 +7,35 @@ module FontAwesome
       # Examples
       #
       #   fa_icon "camera-retro"
-      #   # => <i class="fa fa-camera-retro"></i>
+      #   # => <span class="fa fa-camera-retro"></span>
       #
       #   fa_icon "camera-retro", text: "Take a photo"
-      #   # => <i class="fa fa-camera-retro"></i> Take a photo
+      #   # => <span class="fa fa-camera-retro"></span> Take a photo
       #   fa_icon "chevron-right", text: "Get started", right: true
-      #   # => Get started <i class="fa fa-chevron-right"></i>
+      #   # => Get started <span class="fa fa-chevron-right"></span>
       #
       #   fa_icon "camera-retro 2x"
-      #   # => <i class="fa fa-camera-retro fa-2x"></i>
+      #   # => <span class="fa fa-camera-retro fa-2x"></span>
       #   fa_icon ["camera-retro", "4x"]
-      #   # => <i class="fa fa-camera-retro fa-4x"></i>
+      #   # => <span class="fa fa-camera-retro fa-4x"></span>
       #   fa_icon "spinner spin lg"
-      #   # => <i class="fa fa-spinner fa-spin fa-lg">
+      #   # => <span class="fa fa-spinner fa-spin fa-lg"></span>
       #
       #   fa_icon "quote-left 4x", class: "pull-left"
-      #   # => <i class="fa fa-quote-left fa-4x pull-left"></i>
+      #   # => <span class="fa fa-quote-left fa-4x pull-left"></span>
       #
       #   fa_icon "user", data: { id: 123 }
-      #   # => <i class="fa fa-user" data-id="123"></i>
+      #   # => <span class="fa fa-user" data-id="123"></span>
       #
       #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
-      #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
+      #   # => <li><span class="fa fa-check fa-li"></span> Bulleted list item</li>
       def fa_icon(names = "flag", options = {})
         classes = ["fa"]
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
         right_icon = options.delete(:right)
-        icon = content_tag(:i, nil, options.merge(:class => classes))
+        icon = content_tag(:span, nil, options.merge(:class => classes))
         Private.icon_join(icon, text, right_icon)
       end
 
@@ -46,20 +46,20 @@ module FontAwesome
       #
       #   fa_stacked_icon "twitter", base: "square-o"
       #   # => <span class="fa-stack">
-      #   # =>   <i class="fa fa-square-o fa-stack-2x"></i>
-      #   # =>   <i class="fa fa-twitter fa-stack-1x"></i>
+      #   # =>   <span class="fa fa-square-o fa-stack-2x"></span>
+      #   # =>   <span class="fa fa-twitter fa-stack-1x"></span>
       #   # => </span>
       #
       #   fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "Hi!"
       #   # => <span class="fa-stack pull-right">
-      #   # =>   <i class="fa fa-square fa-stack-2x"></i>
-      #   # =>   <i class="fa fa-terminal fa-inverse fa-stack-1x"></i>
+      #   # =>   <span class="fa fa-square fa-stack-2x"></span>
+      #   # =>   <span class="fa fa-terminal fa-inverse fa-stack-1x"></span>
       #   # => </span> Hi!
       #
       #   fa_stacked_icon "camera", base: "ban-circle", reverse: true
       #   # => <span class="fa-stack">
-      #   # =>   <i class="fa fa-camera fa-stack-1x"></i>
-      #   # =>   <i class="fa fa-ban-circle fa-stack-2x"></i>
+      #   # =>   <span class="fa fa-camera fa-stack-1x"></span>
+      #   # =>   <span class="fa fa-ban-circle fa-stack-2x"></span>
       #   # => </span>
       def fa_stacked_icon(names = "flag", options = {})
         classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
