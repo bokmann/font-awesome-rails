@@ -57,6 +57,14 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_icon %(<i class="fa fa-user" data-id="123"></i>), "user", :data => { :id => 123 }
   end
 
+  test '#fa_icon does not modify options' do
+    icon_options = { :class => 'foo', :data => { :id => 123 }, :text => 'bar' }
+    assert_icon %(<i class="fa fa-user foo" data-id="123"></i> bar), "user", icon_options
+    assert_includes icon_options, :class
+    assert_includes icon_options, :text
+    assert_includes icon_options, :data
+  end
+
   test "#fa_stacked_icon with no args should render a flag icon" do
     expected = %(<span class="fa-stack">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-flag fa-stack-1x")}</span>)
     assert_stacked_icon expected
@@ -102,6 +110,14 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   test "#fa_stacked_icon should pass all other options through" do
     expected = %(<span class="fa-stack" data-id="123">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-user fa-stack-1x")}</span>)
     assert_stacked_icon expected, "user", :base => "square-o", :data => { :id => 123 }
+  end
+
+  test '#fa_stacked_icon does not modify options' do
+    icon_options = { :class => 'foo', :base => "square-o", :data => { :id => 123 } }
+    expected = %(<span class="fa-stack foo" data-id="123">#{i("fa fa-square-o fa-stack-2x")}#{i("fa fa-user fa-stack-1x")}</span>)
+    assert_stacked_icon expected, "user", icon_options
+    assert_includes icon_options, :class
+    assert_includes icon_options, :data
   end
 
   private
