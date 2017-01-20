@@ -2,5 +2,6 @@ source 'https://rubygems.org'
 
 gemspec path: "../"
 gem "railties", "~> 3.2.21"
+gem "test-unit-minitest", require: false
 gem "sass-rails", "~> 3.2.6"
 gem "tzinfo"
