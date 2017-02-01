@@ -23,6 +23,9 @@ module FontAwesome
       #
       #   fa_icon "quote-left 4x", class: "pull-left"
       #   # => <i class="fa fa-quote-left fa-4x pull-left"></i>
+
+      #   fa_icon "quote-left", size: 4, class: "pull-left"
+      #   # => <i class="fa fa-quote-left fa-4x pull-left"></i>
       #
       #   fa_icon "user", data: { id: 123 }
       #   # => <i class="fa fa-user" data-id="123"></i>
@@ -33,6 +36,7 @@ module FontAwesome
         options = original_options.deep_dup
         classes = ["fa"]
         classes.concat Private.icon_names(names)
+        classes.concat Private.icon_names("#{options.delete(:size)}x") if options.has_key?(:size)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
         right_icon = options.delete(:right)

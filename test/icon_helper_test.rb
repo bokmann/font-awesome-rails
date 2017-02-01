@@ -19,6 +19,11 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
     assert_icon i("fa fa-refresh fa-2x fa-spin"), "refresh 2x spin"
   end
 
+  test "#fa_icon should render icons with size passed to it" do
+    assert_icon i("fa fa-pencil fa-4x"), "pencil", :size => 4
+    assert_icon i("fa fa-pencil fa-2x"), "pencil", :size => 2
+  end
+
   test "#fa_icon should render icons with array modifiers" do
     assert_icon i("fa fa-flag"),                  ["flag"]
     assert_icon i("fa fa-check fa-li"),           ["check", "li"]
