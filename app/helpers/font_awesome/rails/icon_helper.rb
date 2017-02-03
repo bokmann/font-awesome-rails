@@ -1,6 +1,19 @@
 module FontAwesome
   module Rails
     module IconHelper
+      # Include CSS with Font Awesome. It uses local CSS in development
+      # and CDN in production. Place it in <head> section.
+      def include_font_awesome
+        if ::Rails.env.development?
+          stylesheet_link_tag 'font-awesome', media: nil
+        else
+          version = FontAwesome::Rails::VERSION
+          version = version.split('.')[0..2].join('.')
+          stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/" +
+                              "#{ version }/css/font-awesome.css", media: nil
+        end
+      end
+
       # Creates an icon tag given an icon name and possible icon
       # modifiers.
       #

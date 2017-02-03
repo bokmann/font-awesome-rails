@@ -57,6 +57,12 @@ class FontAwesomeRailsTest < ActionDispatch::IntegrationTest
     assert_select "span.fa-stack"
   end
 
+  test "helper should include CSS from CDN" do
+    get "/icons"
+    assert_response :success
+    assert_match '<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />', response.body
+  end
+
   private
 
   def clean_sprockets_cache
