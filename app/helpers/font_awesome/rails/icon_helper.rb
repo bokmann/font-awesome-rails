@@ -14,6 +14,11 @@ module FontAwesome
       #   fa_icon "chevron-right", text: "Get started", right: true
       #   # => Get started <i class="fa fa-chevron-right"></i>
       #
+      #   fa_icon "camera-retro" do
+      #     content_tag(:span, "Take a photo")
+      #   end
+      #   # => <i class="fa fa-camera-retro"><span>Take a photo</span></i>
+      #
       #   fa_icon "camera-retro 2x"
       #   # => <i class="fa fa-camera-retro fa-2x"></i>
       #   fa_icon ["camera-retro", "4x"]
@@ -29,14 +34,14 @@ module FontAwesome
       #
       #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
       #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
-      def fa_icon(names = "flag", original_options = {})
+      def fa_icon(names = "flag", original_options = {}, &block)
         options = original_options.deep_dup
         classes = ["fa"]
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
         right_icon = options.delete(:right)
-        icon = content_tag(:i, nil, options.merge(:class => classes))
+        icon = content_tag(:i, nil, options.merge(:class => classes), &block)
         Private.icon_join(icon, text, right_icon)
       end
 
