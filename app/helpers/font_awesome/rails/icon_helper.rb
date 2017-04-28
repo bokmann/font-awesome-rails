@@ -32,6 +32,7 @@ module FontAwesome
       def fa_icon(names = "flag", original_options = {})
         options = original_options.deep_dup
         classes = ["fa"]
+        classes.concat ["fa-#{options.delete(:size)}x"] if options[:size].present?
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
         text = options.delete(:text)
