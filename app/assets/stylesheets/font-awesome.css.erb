@@ -11,8 +11,8 @@
 //= depend_on_asset "fontawesome-webfont.svg"
 @font-face {
   font-family: 'FontAwesome';
-  src: url('<%= font_path('fontawesome-webfont.eot') %>');
-  src: url('<%= font_path('fontawesome-webfont.eot') %>?#iefix') format('embedded-opentype'), url('<%= font_path('fontawesome-webfont.woff2') %>') format('woff2'), url('<%= font_path('fontawesome-webfont.woff') %>') format('woff'), url('<%= font_path('fontawesome-webfont.ttf') %>') format('truetype'), url('<%= font_path('fontawesome-webfont.svg') %>#fontawesomeregular') format('svg');
+  src: url('<%= font_path('fontawesome-webfont.eot') %>?v=<%=FontAwesome::Rails::FA_VERSION%>');
+  src: url('<%= font_path('fontawesome-webfont.eot') %>?#iefix&v=<%=FontAwesome::Rails::FA_VERSION%>') format('embedded-opentype'), url('<%= font_path('fontawesome-webfont.woff2')%>?v=<%=FontAwesome::Rails::FA_VERSION%>') format('woff2'), url('<%= font_path('fontawesome-webfont.woff') %>?v=<%=FontAwesome::Rails::FA_VERSION%>') format('woff'), url('<%= font_path('fontawesome-webfont.ttf') %>?v=<%=FontAwesome::Rails::FA_VERSION%>') format('truetype'), url('<%= font_path('fontawesome-webfont.svg') %>?v=<%=FontAwesome::Rails::FA_VERSION%>#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
