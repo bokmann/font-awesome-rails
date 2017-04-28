@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.files         = `git ls-files -- {app,bin,lib,test,spec}/* {LICENSE*,Rakefile,README*}`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec}/*`.split("\n")
   gem.name          = "font-awesome-rails"
-  gem.require_paths = ["lib"]
+  gem.require_paths = ["lib", "app"]
   gem.version       = FontAwesome::Rails::VERSION
 
   gem.add_dependency "railties", ">= 3.2", "< 5.2"
