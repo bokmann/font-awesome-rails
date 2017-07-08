@@ -88,7 +88,7 @@ module FontAwesome
         end
 
         def self.icon_names(names = [])
-          array_value(names).map { |n| "fa-#{n}" }
+          array_value(names).map { |n| "fa-#{n.to_s.gsub("_","-")}" }
         end
 
         def self.array_value(value = [])
