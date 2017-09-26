@@ -130,6 +130,10 @@ set the config option `action_controller.relative_url_root`:
 The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`,
 so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
 
+In addition you need to indicate the subfolder when you *precompile* the assets:
+
+    RAILS_ENV=production bundle exec rake assets:precompile RAILS_RELATIVE_URL_ROOT=/myrailsapp
+
 ### Rails 3.2
 
 **Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
