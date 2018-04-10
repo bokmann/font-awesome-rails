@@ -10,6 +10,7 @@ gemfile:
   - gemfiles/rails-4.2.gemfile
   - gemfiles/rails-5.0.gemfile
   - gemfiles/rails-5.1.gemfile
+  - gemfiles/rails-5.2.gemfile
   - gemfiles/rails-master.gemfile
 matrix:
   include:
