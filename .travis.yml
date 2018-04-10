@@ -17,5 +17,6 @@ matrix:
     - rvm: 2.2.9
       gemfile: gemfiles/rails-3.2.gemfile
   allow_failures:
+    - rvm: 2.5.0
     - gemfile: gemfiles/rails-master.gemfile
   fast_finish: true
