@@ -97,7 +97,7 @@ fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "
 ### Rails engines
 
 When building a Rails engine that includes font-awesome-rails as a dependency,
-be sure to `require "font-awesome-rails"` somewhere during the intialization of
+be sure to `require "font-awesome-rails"` somewhere during the initialization of
 your engine. Otherwise, Rails will not automatically pick up the load path of
 the font-awesome-rails assets and helpers ([source 1](https://github.com/bokmann/font-awesome-rails/issues/130#issuecomment-95308175), [source 2](https://bibwild.wordpress.com/2013/02/27/gem-depends-on-rails-engine-gem-gotcha-need-explicit-require/), [source 3](http://stackoverflow.com/questions/5159607/rails-engine-gems-dependencies-how-to-load-them-into-the-application/5850503#5850503)).
 
