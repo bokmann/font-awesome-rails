@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = FontAwesome::Rails::VERSION
 
-  gem.add_dependency "railties", ">= 3.2", "< 6.1"
+  gem.add_dependency "railties", ">= 3.2", "< 6.2"
 
   gem.add_development_dependency "activesupport"
   gem.add_development_dependency "sassc-rails"
