@@ -13,7 +13,6 @@ jobs:
           - rails-6.0
           - rails-6.1
         include:
-          - { ruby: "2.3", gemfile: "rails-3.2", bundler: "1" }
           - { ruby: "2.3", gemfile: "rails-4.2", bundler: "1" }
           - { ruby: "2.4", gemfile: "rails-4.2", bundler: "1" }
 
