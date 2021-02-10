@@ -1,7 +1,7 @@
 # font-awesome-rails
 
 [![Gem Version](http://img.shields.io/gem/v/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
-[![Build Status](https://secure.travis-ci.org/bokmann/font-awesome-rails.svg)](http://travis-ci.org/bokmann/font-awesome-rails)
+[![Build Status](https://github.com/bokmann/font-awesome-rails/workflows/CI/badge.svg)](https://github.com/bokmann/font-awesome-rails/actions?query=workflow%3ACI)
 [![Gem Downloads](https://img.shields.io/gem/dt/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
 
 font-awesome-rails provides the
