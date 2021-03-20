@@ -8,6 +8,23 @@ font-awesome-rails provides the
 [Font-Awesome](http://fortawesome.github.com/Font-Awesome/) web fonts and
 stylesheets as a Rails engine for use with the asset pipeline.
 
+## End-of-Life With FontAwesome 4.7
+
+This gem reached end-of-life with *FontAwesome 4.7*
+
+That means that if you use it, you will want to search for fonts within the 4.7 font-awesome catalog only which can be found [here](https://fontawesome.com/v4.7.0/icons/).  If you really want to use this Gem with font-awesome past 4.7, there is some successful discussion of monkeypatching on #194, however, this is also recommened against on the same issue. 
+
+Some alternatives to this gem for Font Awesome version 5+ include:
+
+• font-awesome-sass
+https://github.com/FortAwesome/font-awesome-sass
+
+• font_awesome5_rails
+https://github.com/tomkra/font_awesome5_rails
+
+• font_awesome_pro5_rails
+https://github.com/krtschmr/font_awesome_pro5_rails
+
 ## Installation
 
 Add this to your Gemfile:
@@ -138,6 +155,16 @@ In addition you need to indicate the subfolder when you *precompile* the assets:
 
 **Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
 so that these helpers are automatically loaded in production environments.
+
+
+### Rails 4+ Apps — Watch out Not To get stuck on Version 3.1.1.0 
+You will note specifically 3.1.1.0 accidentally is missing an upward bound on its Rails version in the gem dependancy. Because of this, you may inadvertentlly stay on that old gem version not even knowing it. To fix, specify a version using a soft specifier ( like ~> ) in your `Gemfile` to coorespond with the one for your Rails version. After you pass version 3.1.1.0 of this gem in your Rails app, you *should not* need to keep doing this (you can remove the soft specifier in your `Gemfile`) because the Gemspec will manage which version is appropriate for you. This will apply to any new Rails app too because it will pick up the 3.1.1.0 version until you fix the problem. 
+
+
+### Rails 6.1 
+Specifically, upgrading to Rails 6.1 while on version 3.1.1.0 of font-awesome-rails (see above) breaks all the fonts. Don't get frustrated by attempting to bundle update font-awesome-raills, or set its version number to anything below 4.7.0.6 — because all the intermediate versions are correctly 'version-locked' to Rails's version.
+
+Version 4.7.0.6 fixes the issue for your Rails 6.1 app.
 
 ## Versioning
 
