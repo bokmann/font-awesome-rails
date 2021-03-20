@@ -13,8 +13,11 @@ stylesheets as a Rails engine for use with the asset pipeline.
 This gem reached end-of-life with Rails 4.7. That means that if you use it, you will want to search for fonts within the 4.7 font-awesome catalog only which can be found [here](https://fontawesome.com/v4.7.0/icons/).  If you really want to use this Gem with font-awesome past 4.7, there is some successful discussion of monkeypatching on #194, however, this is also recommened against on the same issue. 
 
 Some alternatives to this gem for more modern Font Awesome versions include:
+• font-awesome-sass
 https://github.com/FortAwesome/font-awesome-sass
+• font_awesome5_rails
 https://github.com/tomkra/font_awesome5_rails
+• font_awesome_pro5_rails
 https://github.com/krtschmr/font_awesome_pro5_rails
 
 ## Installation
