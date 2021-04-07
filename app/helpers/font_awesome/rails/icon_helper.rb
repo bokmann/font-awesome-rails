@@ -29,7 +29,8 @@ module FontAwesome
       #
       #   content_tag(:li, fa_icon("check li", text: "Bulleted list item"))
       #   # => <li><i class="fa fa-check fa-li"></i> Bulleted list item</li>
-      def fa_icon(names = "flag", options = {})
+      def fa_icon(names = "flag", original_options = {})
+        options = original_options.deep_dup
         classes = ["fa"]
         classes.concat Private.icon_names(names)
         classes.concat Array(options.delete(:class))
@@ -61,7 +62,8 @@ module FontAwesome
       #   # =>   <i class="fa fa-camera fa-stack-1x"></i>
       #   # =>   <i class="fa fa-ban-circle fa-stack-2x"></i>
       #   # => </span>
-      def fa_stacked_icon(names = "flag", options = {})
+      def fa_stacked_icon(names = "flag", original_options = {})
+        options = original_options.deep_dup
         classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
         base_names = Private.array_value(options.delete(:base) || "square-o").push("stack-2x")
         names = Private.array_value(names).push("stack-1x")

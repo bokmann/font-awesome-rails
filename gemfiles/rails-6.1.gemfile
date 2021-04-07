@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gemspec path: "../"
-gem "railties", "~> 5.0.0.rc1"
+gem "railties", "~> 6.1.0"

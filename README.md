@@ -1,7 +1,7 @@
 # font-awesome-rails
 
 [![Gem Version](http://img.shields.io/gem/v/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
-[![Build Status](https://secure.travis-ci.org/bokmann/font-awesome-rails.svg)](http://travis-ci.org/bokmann/font-awesome-rails)
+[![Build Status](https://github.com/bokmann/font-awesome-rails/workflows/CI/badge.svg)](https://github.com/bokmann/font-awesome-rails/actions?query=workflow%3ACI)
 [![Gem Downloads](https://img.shields.io/gem/dt/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
 
 font-awesome-rails provides the
@@ -97,7 +97,7 @@ fa_stacked_icon "terminal inverse", base: "square", class: "pull-right", text: "
 ### Rails engines
 
 When building a Rails engine that includes font-awesome-rails as a dependency,
-be sure to `require "font-awesome-rails"` somewhere during the intialization of
+be sure to `require "font-awesome-rails"` somewhere during the initialization of
 your engine. Otherwise, Rails will not automatically pick up the load path of
 the font-awesome-rails assets and helpers ([source 1](https://github.com/bokmann/font-awesome-rails/issues/130#issuecomment-95308175), [source 2](https://bibwild.wordpress.com/2013/02/27/gem-depends-on-rails-engine-gem-gotcha-need-explicit-require/), [source 3](http://stackoverflow.com/questions/5159607/rails-engine-gems-dependencies-how-to-load-them-into-the-application/5850503#5850503)).
 
@@ -129,6 +129,10 @@ set the config option `action_controller.relative_url_root`:
 
 The default value of this variable is taken from `ENV['RAILS_RELATIVE_URL_ROOT']`,
 so configuring the environment to define `RAILS_RELATIVE_URL_ROOT` is an alternative strategy.
+
+In addition you need to indicate the subfolder when you *precompile* the assets:
+
+    RAILS_ENV=production bundle exec rake assets:precompile RAILS_RELATIVE_URL_ROOT=/myrailsapp
 
 ### Rails 3.2
 
