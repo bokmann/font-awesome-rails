@@ -128,7 +128,7 @@ class FontAwesome::Rails::IconHelperTest < ActionView::TestCase
   private
 
   def assert_icon(expected, *args)
-    message = "`fa_icon(#{args.inspect[1...-1]})` should return `#{expected}`"
+    message = "`fa_icon(#{args.inspect[1...-1]})` should return `#{expected}, got #{fa_icon(*args)}`"
     assert_dom_equal expected, fa_icon(*args), message
   end
 
