@@ -147,9 +147,9 @@ make any breaking changes until Font-Awesome core makes a major version bump.
 
 ## License
 
-* The [Font Awesome](http://fortawesome.github.com/Font-Awesome) font is
+* The [Font Awesome](http://fortawesome.github.io/Font-Awesome) font is
   licensed under the [SIL Open Font License](http://scripts.sil.org/OFL).
-* [Font Awesome](http://fortawesome.github.com/Font-Awesome) CSS files are
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome) CSS files are
   licensed under the
   [MIT License](http://opensource.org/licenses/mit-license.html).
 * The remainder of the font-awesome-rails project is licensed under the
