@@ -1,9 +1,12 @@
-See [GitHub Releases](https://github.com/bokmann/font-awesome-rails/releases)
+See [GitHub Releases](https://github.com/bokmann/font-awesome-rails/releases) for all future releases
 
 ## Changes
 
 | Version | FontAwesome SHA1 | Notes / Other additions                                                                         |
 |---------|------------------|-------------------------------------------------------------------------------------------------|
+| 4.7.0.8 | `a8386aa`        | added Rails 7.0 support                                                                         |
+| 4.7.0.7 | `a8386aa`        | added Ruby 3.0 support; removes Rails 3.2 support                                               |
+| 4.7.0.6 | `a8386aa`        | added Rails 6.1 support                                                                         |
 | 4.7.0.5 | `a8386aa`        | added Rails 6.0 support                                                                         |
 | 4.7.0.4 | `a8386aa`        | added Rails 5.2 support                                                                         |
 | 4.7.0.3 | `a8386aa`        | improve gemspec description                                                                     |
