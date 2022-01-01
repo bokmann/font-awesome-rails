@@ -5,7 +5,7 @@
 [![Gem Downloads](https://img.shields.io/gem/dt/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
 
 font-awesome-rails provides the
-[Font-Awesome](http://fortawesome.github.com/Font-Awesome/) web fonts and
+[Font-Awesome](http://fortawesome.github.io/Font-Awesome/) web fonts and
 stylesheets as a Rails engine for use with the asset pipeline.
 
 ## Installation
