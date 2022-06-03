@@ -5,7 +5,7 @@
 [![Gem Downloads](https://img.shields.io/gem/dt/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
 
 font-awesome-rails provides the
-[Font-Awesome](http://fortawesome.github.io/Font-Awesome/) web fonts and
+[Font-Awesome](https://fontawesome.com) web fonts and
 stylesheets as a Rails engine for use with the asset pipeline.
 
 ## Installation
@@ -30,7 +30,7 @@ In your `application.css`, include the css file:
 Then restart your webserver if it was previously running.
 
 Congrats! You now have scalable vector icon support. Pick an icon and check out the
-[FontAwesome Examples](http://fortawesome.github.io/Font-Awesome/examples/).
+[FontAwesome Examples](https://fontawesome.com/icons).
 
 ### Sass Support
 
@@ -147,9 +147,9 @@ make any breaking changes until Font-Awesome core makes a major version bump.
 
 ## License
 
-* The [Font Awesome](http://fortawesome.github.io/Font-Awesome) font is
+* The [Font Awesome](https://fontawesome.com) font is
   licensed under the [SIL Open Font License](http://scripts.sil.org/OFL).
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome) CSS files are
+* [Font Awesome](https://fontawesome.com) CSS files are
   licensed under the
   [MIT License](http://opensource.org/licenses/mit-license.html).
 * The remainder of the font-awesome-rails project is licensed under the
