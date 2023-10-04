@@ -17,8 +17,6 @@ jobs:
           - rails-6.1
           - rails-7.0
         include:
-          - { ruby: "2.3", gemfile: "rails-4.2", bundler: "1" }
-          - { ruby: "2.4", gemfile: "rails-4.2", bundler: "1" }
           - { ruby: "2.5", gemfile: "rails-5.2", bundler: "default" }
           - { ruby: "2.6", gemfile: "rails-5.2", bundler: "default" }
 
@@ -26,7 +24,7 @@ jobs:
       BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
       # https://github.com/marketplace/actions/checkout
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       # https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
