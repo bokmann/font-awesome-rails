@@ -1,3 +1,8 @@
+> [!NOTE]
+> For Font Awesome 5 or 6 support, please consider [font-awesome-sass](https://github.com/FortAwesome/font-awesome-sass).
+
+---
+
 # font-awesome-rails
 
 [![Gem Version](http://img.shields.io/gem/v/font-awesome-rails.svg)](https://rubygems.org/gems/font-awesome-rails)
