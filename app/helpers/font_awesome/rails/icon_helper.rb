@@ -62,6 +62,18 @@ module FontAwesome
       #   # =>   <i class="fa fa-camera fa-stack-1x"></i>
       #   # =>   <i class="fa fa-ban-circle fa-stack-2x"></i>
       #   # => </span>
+      #
+      #   fa_stacked_icon "camera", base: "ban", base_options: { style: "color:Tomato" }
+      #   # => <span class="fa-stack">
+      #   # =>   <i class="fa fa-ban fa-stack-2x" style="color:Tomato"></i>
+      #   # =>   <i class="fa fa-camera fa-stack-1x"></i>
+      #   # => </span>
+      #
+      #   fa_stacked_icon "flag", base: "circle", icon_options: { style: "color:Green" }
+      #   # => <span class="fa-stack">
+      #   # =>   <i class="fa fa-circle fa-stack-2x"></i>
+      #   # =>   <i class="fa fa-flag fa-stack-1x" style="color:Green"></i>
+      #   # => </span>
       def fa_stacked_icon(names = "flag", original_options = {})
         options = original_options.deep_dup
         classes = Private.icon_names("stack").concat(Array(options.delete(:class)))
