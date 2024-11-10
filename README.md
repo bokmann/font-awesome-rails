@@ -1,4 +1,4 @@
-> [!NOTE]
+> [!TIP]
 > For Font Awesome 5 or 6 support, please consider [font-awesome-sass](https://github.com/FortAwesome/font-awesome-sass).
 
 ---
@@ -141,8 +141,10 @@ In addition you need to indicate the subfolder when you *precompile* the assets:
 
 ### Rails 3.2
 
-**Note:** In Rails 3.2, make sure font-awesome-rails is outside the bundler asset group
-so that these helpers are automatically loaded in production environments.
+> [!NOTE]
+> In Rails 3.2, make sure font-awesome-rails is outside the bundler asset
+> group so that these helpers are automatically loaded in production
+> environments.
 
 ## Versioning
 
