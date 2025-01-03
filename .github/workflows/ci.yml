@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ["3.2", "3.3"]
+        ruby: ["3.2", "3.3", "3.4"]
         bundler: [default]
         gemfile:
           - rails-7.1
